@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BF7ECC65DD38620DCB8AB9F /* Pods_NiftyMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */; };
 		AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */; };
-		AB2EDCA71F4D4FF2000C34C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCA61F4D4FF2000C34C5 /* ViewController.swift */; };
 		AB2EDCAA1F4D4FF2000C34C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */; };
 		AB2EDCAC1F4D4FF2000C34C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCAB1F4D4FF2000C34C5 /* Assets.xcassets */; };
 		AB2EDCAF1F4D4FF2000C34C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCAD1F4D4FF2000C34C5 /* LaunchScreen.storyboard */; };
+		AB2EDCB71F4D5910000C34C5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */; };
+		AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */; };
+		AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3166EBD8C069DD211F7F4246 /* Pods-NiftyMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiftyMemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiftyMemo/Pods-NiftyMemo.release.xcconfig"; sourceTree = "<group>"; };
+		4723C2D3D690F2E5866A557C /* Pods-NiftyMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiftyMemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiftyMemo/Pods-NiftyMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AB2EDCA11F4D4FF2000C34C5 /* NiftyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiftyMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AB2EDCA61F4D4FF2000C34C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB2EDCA91F4D4FF2000C34C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB2EDCAB1F4D4FF2000C34C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB2EDCAE1F4D4FF2000C34C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB2EDCB01F4D4FF2000C34C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
+		AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiftyMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BF7ECC65DD38620DCB8AB9F /* Pods_NiftyMemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DD5267B3735DF2E7F2420D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4723C2D3D690F2E5866A557C /* Pods-NiftyMemo.debug.xcconfig */,
+				3166EBD8C069DD211F7F4246 /* Pods-NiftyMemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AB2EDC981F4D4FF2000C34C5 = {
 			isa = PBXGroup;
 			children = (
 				AB2EDCA31F4D4FF2000C34C5 /* NiftyMemo */,
 				AB2EDCA21F4D4FF2000C34C5 /* Products */,
+				4DD5267B3735DF2E7F2420D5 /* Pods */,
+				FF4D6E8BD868737BF97425F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +75,23 @@
 			isa = PBXGroup;
 			children = (
 				AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */,
-				AB2EDCA61F4D4FF2000C34C5 /* ViewController.swift */,
+				AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */,
 				AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */,
+				AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */,
+				AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */,
 				AB2EDCAB1F4D4FF2000C34C5 /* Assets.xcassets */,
 				AB2EDCAD1F4D4FF2000C34C5 /* LaunchScreen.storyboard */,
 				AB2EDCB01F4D4FF2000C34C5 /* Info.plist */,
 			);
 			path = NiftyMemo;
+			sourceTree = "<group>";
+		};
+		FF4D6E8BD868737BF97425F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB2EDCB31F4D4FF2000C34C5 /* Build configuration list for PBXNativeTarget "NiftyMemo" */;
 			buildPhases = (
+				2FA53AA04AA4001ABD3DC9AE /* [CP] Check Pods Manifest.lock */,
 				AB2EDC9D1F4D4FF2000C34C5 /* Sources */,
 				AB2EDC9E1F4D4FF2000C34C5 /* Frameworks */,
 				AB2EDC9F1F4D4FF2000C34C5 /* Resources */,
+				8441189C78C733F7E5526A75 /* [CP] Embed Pods Frameworks */,
+				8A1DB3BD879579DD9C07FBC7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +164,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FA53AA04AA4001ABD3DC9AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8441189C78C733F7E5526A75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiftyMemo/Pods-NiftyMemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A1DB3BD879579DD9C07FBC7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiftyMemo/Pods-NiftyMemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AB2EDC9D1F4D4FF2000C34C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB2EDCA71F4D4FF2000C34C5 /* ViewController.swift in Sources */,
+				AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */,
+				AB2EDCB71F4D5910000C34C5 /* ListViewController.swift in Sources */,
 				AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */,
+				AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +341,7 @@
 		};
 		AB2EDCB41F4D4FF2000C34C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4723C2D3D690F2E5866A557C /* Pods-NiftyMemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NiftyMemo/Info.plist;
@@ -270,6 +354,7 @@
 		};
 		AB2EDCB51F4D4FF2000C34C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3166EBD8C069DD211F7F4246 /* Pods-NiftyMemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NiftyMemo/Info.plist;
@@ -299,6 +384,7 @@
 				AB2EDCB51F4D4FF2000C34C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
