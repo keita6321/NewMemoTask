@@ -8,6 +8,7 @@
 
 import UIKit
 import NCMB
+import SVProgressHUD
 
 class DetailViewController: UIViewController {
 
@@ -24,11 +25,12 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    //メモの内容を変更
     @IBAction func update(){
         selectedMemo.setObject(memoTextView.text, forKey: "text")
         selectedMemo.saveInBackground { (error) in
             if error != nil{
-                print(error)
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
             }
             else{
                 self.navigationController?.popViewController(animated: true)

@@ -8,9 +8,11 @@
 
 import UIKit
 import NCMB
+import SVProgressHUD
 
 class ListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
+    
     @IBOutlet var memoTableView: UITableView!
     var memoArray = [NCMBObject]()
     
@@ -19,6 +21,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
         memoTableView.dataSource = self
         memoTableView.delegate = self
         memoTableView.tableFooterView = UIView()
+        //showDatePicker()
     }
     override func viewWillAppear(_ animated: Bool) {
         loadMemo()
@@ -64,7 +67,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
             query?.whereKey("objectId", equalTo: memoArray[indexPath.row].object(forKey: "objectId"))
             query?.findObjectsInBackground({ (result, error) in
                 if error != nil{
-                    print(error)
+                    SVProgressHUD.showError(withStatus: error?.localizedDescription)
                 }
                 else{
                     print (type(of: result))
@@ -72,7 +75,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
                     let textObject = memo.first//一つしかないしfirstでいい
                     textObject?.deleteInBackground({ (error) in
                         if error != nil{
-                            print(error)
+                            SVProgressHUD.showError(withStatus: error?.localizedDescription)
                         }
                         else{
                             print("delete sucsess")
@@ -85,13 +88,19 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
         print(memoArray.count)
     }
+    //自動振り分け
     
     
+    
+    
+    
+    
+    //DBの更新とtableViewへの反映
     func loadMemo(){
         let query = NCMBQuery(className: "NiftyMemo")
         query?.findObjectsInBackground({ (result, error) in
             if error != nil{
-                print(error)
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
             }
             else{
                 self.memoArray = result as! [NCMBObject]//DBから全件取得して
