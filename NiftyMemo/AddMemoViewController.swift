@@ -74,6 +74,11 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
     @IBAction func save(){
     let object = NCMBObject(className: "NiftyMemo")
         object?.setObject(memoTextView.text, forKey: "text")
+        object?.setObject(textDatePicker.text, forKey: "limit")
+        object?.setObject("false", forKey: "today")
+        object?.setObject("false", forKey: "done")
+        object?.setObject("false", forKey: "expired")
+        
         object?.saveInBackground({ (error) in
             if error != nil{
                 SVProgressHUD.showError(withStatus: error?.localizedDescription)
@@ -87,6 +92,7 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
             //    self.present(alertController, animated: true, completion: nil)
             }
         })
+        
     }
 
 }
