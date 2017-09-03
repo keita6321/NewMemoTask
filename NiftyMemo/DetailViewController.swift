@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
     func donedatePicker(){
         //For date formate
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "yyyy-MM-dd"
         textDatePicker.text = formatter.string(from: datePicker.date)
         //dismiss date picker dialog
         self.view.endEditing(true)
@@ -70,7 +70,7 @@ class DetailViewController: UIViewController {
     func format(date:Date)->String{
         
         let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "yyyy/MM/dd"
+        dateformatter.dateFormat = "yyyy-MM-dd"
         let strDate = dateformatter.string(from: date)
         
         return strDate

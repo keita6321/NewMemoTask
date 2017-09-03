@@ -52,13 +52,16 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
         // add toolbar to textField
         textDatePicker.inputAccessoryView = toolbar
         // add datepicker to textField
+        datePicker.datePickerMode = UIDatePickerMode.date
         textDatePicker.inputView = datePicker
     }
     
     func donedatePicker(){
         //For date formate
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        //formatter.locale = Locale(identifier: "ja_JP")
+        //formatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
+        formatter.dateFormat = "yyyy-MM-dd"
         textDatePicker.text = formatter.string(from: datePicker.date)
         //dismiss date picker dialog
         self.view.endEditing(true)
@@ -75,9 +78,9 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
     let object = NCMBObject(className: "NiftyMemo")
         object?.setObject(memoTextView.text, forKey: "text")
         object?.setObject(textDatePicker.text, forKey: "limit")
-        object?.setObject("false", forKey: "today")
-        object?.setObject("false", forKey: "done")
-        object?.setObject("false", forKey: "expired")
+        object?.setObject(false, forKey: "today")
+        object?.setObject(false, forKey: "done")
+        object?.setObject(false, forKey: "expired")
         
         object?.saveInBackground({ (error) in
             if error != nil{
