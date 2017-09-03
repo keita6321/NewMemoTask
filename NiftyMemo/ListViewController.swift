@@ -11,7 +11,7 @@ import NCMB
 import SVProgressHUD
 
 class ListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-
+    
     
     @IBOutlet var memoTableView: UITableView!
     var memoArray = [NCMBObject]()
@@ -26,7 +26,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
     override func viewWillAppear(_ animated: Bool) {
         loadMemo()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,7 +89,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
         print(memoArray.count)
     }
     //自動振り分け
-    
+    //全タスクの完了・遅延・今日やるフラグを一元管理
     func checkLimit(){
         let query = NCMBQuery(className: "NiftyMemo")
         //var i = 0
@@ -114,6 +114,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
                         print(i)
                         print("月変わっちゃってますよ")
                         data[i].setObject(true, forKey: "expired")
+                        
                     }
                     else if(date_split[1] < split[1]){
                         print(i)
@@ -153,6 +154,81 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     
+    func checkLimit2(){
+        let query = NCMBQuery(className: "NiftyMemo")
+        
+        query?.findObjectsInBackground({ (result, error) in
+            if error != nil{
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
+            }
+            if result?.count == 0{
+                print("空や")
+            }
+            else{//本題
+                var data = result as! [NCMBObject]
+                let str = "2017-08-30"
+                let split = str.components(separatedBy: "-")
+                
+                for i in 0...(result?.count)!-1 {
+                    if(data[i].object(forKey: "done") as! Bool){
+                        data[i].setObject(false, forKey: "expired")
+                        data[i].setObject(false, forKey: "today")
+                        print("完了済み")
+                    }
+                    else{
+                        var date = data[i].object(forKey: "limit") as! String
+                        var date_split = date.components(separatedBy: "-")
+                        if(date_split[1] < split[1]){//7月＞8月
+                            print(i)
+                            print("もう月変わっちゃってますよ")
+                            data[i].setObject(true, forKey: "expired")
+                            data[i].setObject(true, forKey: "today")
+                        }
+                        else if(date_split[1] > split[1]){
+                            print(i)
+                            print("まだまだ時間はある")
+                            print(date_split[1])
+                            data[i].setObject(false, forKey: "expired")
+                            data[i].setObject(false, forKey: "today")
+                        }
+                        else{//月は同じ
+                            //if(date_split[2].substring(to: date_split[2].startIndex) == "0"){
+                            //    date_split[2] = date_split[2].substring(from: date_split[2].endIndex)
+                            //}
+                            if(date_split[2] < split[2]){//31日＞30日
+                                print(i)
+                                print("締め切り過ぎてますが")
+                                data[i].setObject(true, forKey: "expired")
+                                data[i].setObject(true, forKey: "today")
+                            }
+                            else if(date_split[2] > split[2]){
+                                print(i)
+                                print("早めに進めましょう")
+                                data[i].setObject(false, forKey: "expired")
+                                data[i].setObject(false, forKey: "today")
+                            }
+                            else{
+                                print(i)
+                                print("今日までですよー")
+                                data[i].setObject(false, forKey: "expired")
+                                data[i].setObject(true, forKey: "today")
+                            }
+                        }
+                    }
+                    data[i].saveInBackground({ (error) in
+                        print(i)
+                        if(error != nil){
+                            SVProgressHUD.showError(withStatus: error?.localizedDescription)
+                        }
+                        else{
+                            print("ok"+String(i))
+                        }
+                    })
+                }
+            }
+        })
+    }
+    
     
     
     //DBの更新とtableViewへの反映
@@ -165,7 +241,7 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
             else{
                 self.memoArray = result as! [NCMBObject]//DBから全件取得して
                 self.memoTableView.reloadData()//こちらで扱うmemoArrayに格納
-                self.checkLimit()
+                self.checkLimit2()
             }
         })
     }

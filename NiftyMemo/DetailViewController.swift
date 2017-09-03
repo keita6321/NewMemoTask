@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet var textDatePicker: UITextField!
     let datePicker = UIDatePicker()
+    //var limit :String = ""
 
     @IBOutlet var memoTextView: UITextView!
     var selectedMemo: NCMBObject!
@@ -24,6 +25,7 @@ class DetailViewController: UIViewController {
         memoTextView.text = selectedMemo.object(forKey: "text") as! String
         //textDatePicker.text = format(date: selectedMemo.object(forKey: "limit") as! Date)
         showDatePicker()
+        textDatePicker.text = selectedMemo.object(forKey: "limit") as! String
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,6 +92,17 @@ class DetailViewController: UIViewController {
             }
             else{
                 self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    @IBAction func done(){
+        selectedMemo.setObject(true, forKey: "done")
+        selectedMemo.saveInBackground { (error) in
+            if(error != nil){
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
+            }
+            else{
+                print("change doneFlag")
             }
         }
     }
