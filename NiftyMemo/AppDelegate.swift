@@ -8,17 +8,23 @@
 
 import UIKit
 import NCMB
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-
+    let center = UNUserNotificationCenter.current()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         NCMB.setApplicationKey("0e456185806caff47387073ca562dbc64ddecd2692cea091cef40d35c49fcca1", clientKey: "f1a03864ed8e757e6d57f72b5cb5209d96e69ee3edf587777b21a6b54b694249")
+        self.center.delegate = self
         return true
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
