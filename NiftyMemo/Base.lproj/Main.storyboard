@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="g1h-Fu-jol">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Q4-gE-R1H">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--TASK-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="NiftyMemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1Ph-4s-YdO">
+                    <navigationItem key="navigationItem" title="TASK" id="1Ph-4s-YdO">
                         <barButtonItem key="leftBarButtonItem" systemItem="compose" id="BX8-nN-2PO"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gh9-05-pRV">
                             <connections>
@@ -58,9 +58,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="62.518740629685162"/>
+            <point key="canvasLocation" x="1823.2" y="62.518740629685162"/>
         </scene>
-        <!--メモを追加-->
+        <!--NEW-->
         <scene sceneID="I1z-Ic-aVl">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="PLI-cg-ILC" customClass="AddMemoViewController" customModule="NiftyMemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,7 +114,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="メモを追加" id="nBk-hl-ZGn"/>
+                    <navigationItem key="navigationItem" title="NEW" id="nBk-hl-ZGn"/>
                     <connections>
                         <outlet property="memoTextView" destination="rp2-Fp-C9c" id="580-SC-rH9"/>
                         <outlet property="textDatePicker" destination="SZe-Yh-2ya" id="6JE-6C-nxP"/>
@@ -122,9 +122,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHm-qL-ORo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="-109.29535232383809"/>
+            <point key="canvasLocation" x="2831.1999999999998" y="-109.29535232383809"/>
         </scene>
-        <!--詳細-->
+        <!--DETAIL-->
         <scene sceneID="Aqs-eF-Jay">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="hhF-ih-Mst" customClass="DetailViewController" customModule="NiftyMemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,7 +184,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="詳細" id="tsi-NE-gYX">
+                    <navigationItem key="navigationItem" title="DETAIL" id="tsi-NE-gYX">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="teU-SG-FT2"/>
                     </navigationItem>
                     <connections>
@@ -194,12 +194,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7K4-ec-9hj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="572.56371814092961"/>
+            <point key="canvasLocation" x="2831.1999999999998" y="572.56371814092961"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--TASK-->
         <scene sceneID="GQv-hr-1hf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g1h-Fu-jol" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TASK" id="qAd-mW-ZF3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UCJ-Fv-if0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -213,6 +214,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnN-e5-ry8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-306" y="-202"/>
+        </scene>
+        <!--MEMO-->
+        <scene sceneID="nq0-lv-40m">
+            <objects>
+                <viewController id="YWa-lj-bGd" customClass="MemoViewController" customModule="NiftyMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ghh-pS-Esb"/>
+                        <viewControllerLayoutGuide type="bottom" id="U8o-Uu-xYt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tKK-xK-Vvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s7g-NY-M9s">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="a" id="5FL-Ba-0dO" customClass="MemoCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5FL-Ba-0dO" id="xaO-eR-aDN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="MEMO" id="g3c-gQ-Vs5"/>
+                    <connections>
+                        <outlet property="memoTableView" destination="s7g-NY-M9s" id="UHo-bj-WbL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYB-18-Z0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-199.19999999999999" y="517.6911544227886"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ren-A5-A5U">
+            <objects>
+                <tabBarController id="9Q4-gE-R1H" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="INw-Nq-hhn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fpl-Yv-Waf" kind="relationship" relationship="viewControllers" id="Zmc-dq-T92"/>
+                        <segue destination="g1h-Fu-jol" kind="relationship" relationship="viewControllers" id="EE4-TC-hKg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42F-Gn-1KZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2089" y="192"/>
+        </scene>
+        <!--MEMO-->
+        <scene sceneID="yxv-bQ-e63">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fpl-Yv-Waf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="MEMO" id="TWu-Ph-d8d"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WV4-WM-jVK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YWa-lj-bGd" kind="relationship" relationship="rootViewController" id="nTj-Ac-YVo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mJ-jm-Ywd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1138.4000000000001" y="518.59070464767615"/>
         </scene>
     </scenes>
     <resources>
