@@ -15,6 +15,7 @@
 		AB2EDCB71F4D5910000C34C5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */; };
 		AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */; };
 		AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */; };
+		AB3151841F6672F40055924F /* gplaypattern_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3151831F6672F40055924F /* gplaypattern_@2X.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
 		AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AB3151831F6672F40055924F /* gplaypattern_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gplaypattern_@2X.png"; sourceTree = "<group>"; };
 		BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiftyMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 		AB2EDCA31F4D4FF2000C34C5 /* NiftyMemo */ = {
 			isa = PBXGroup;
 			children = (
+				AB3151851F6673020055924F /* picture */,
 				AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */,
 				AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */,
 				AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */,
@@ -84,6 +87,14 @@
 				AB2EDCB01F4D4FF2000C34C5 /* Info.plist */,
 			);
 			path = NiftyMemo;
+			sourceTree = "<group>";
+		};
+		AB3151851F6673020055924F /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				AB3151831F6672F40055924F /* gplaypattern_@2X.png */,
+			);
+			name = picture;
 			sourceTree = "<group>";
 		};
 		FF4D6E8BD868737BF97425F8 /* Frameworks */ = {
@@ -159,6 +170,7 @@
 				AB2EDCAF1F4D4FF2000C34C5 /* LaunchScreen.storyboard in Resources */,
 				AB2EDCAC1F4D4FF2000C34C5 /* Assets.xcassets in Resources */,
 				AB2EDCAA1F4D4FF2000C34C5 /* Main.storyboard in Resources */,
+				AB3151841F6672F40055924F /* gplaypattern_@2X.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

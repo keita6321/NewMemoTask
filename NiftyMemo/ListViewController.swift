@@ -15,12 +15,28 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var myAppDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet var memoTableView: UITableView!
     var memoArray = [NCMBObject]()
+    var memoListBackImage = UIImage(named: "gplaypattern_@2X.png")!
+    var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         memoTableView.dataSource = self
         memoTableView.delegate = self
         memoTableView.tableFooterView = UIView()
+        
+        //imageView.image = memoListBackImage
+        // set alpha value of imageView
+//        imageView.alpha = 0.5
+        
+        
+        // UIImageView 初期化
+        //imageView = UIImageView(image:memoListBackImage)
+        // 画面の横幅を取得
+        //let screenWidth:CGFloat = view.frame.size.width
+        //let screenHeight:CGFloat = view.frame.size.height
+        // 画像の中心を画面の中心に設定
+        //imageView.center = CGPoint(x:screenWidth/2, y:screenHeight/2)
+        
         //showDatePicker()
         requestAuth()
     }
@@ -40,6 +56,9 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
     //セルを返す
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        // cell内のcontentViewの背景を透過
+        cell.backgroundColor = UIColor.clear
+        cell.contentView.backgroundColor = UIColor.clear
         cell.textLabel?.text = memoArray[indexPath.row].object(forKey: "text") as! String
         return cell
     }
