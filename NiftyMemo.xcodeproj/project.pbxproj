@@ -21,6 +21,10 @@
 		AB3151971F6782500055924F /* ExpiredTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151961F6782500055924F /* ExpiredTaskViewController.swift */; };
 		AB3151991F6783B60055924F /* TodayTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151981F6783B60055924F /* TodayTaskViewController.swift */; };
 		AB31519B1F67A1970055924F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31519A1F67A1970055924F /* MemoViewController.swift */; };
+		AB31519D1F67B3810055924F /* SampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB31519C1F67B3810055924F /* SampleTableViewCell.xib */; };
+		AB31519F1F67B3E80055924F /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */; };
+		AB3151A11F67B4D70055924F /* dora.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3151A01F67B4D70055924F /* dora.png */; };
+		AB3151A31F67B7DC0055924F /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151A21F67B7DC0055924F /* SampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		AB3151961F6782500055924F /* ExpiredTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiredTaskViewController.swift; sourceTree = "<group>"; };
 		AB3151981F6783B60055924F /* TodayTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTaskViewController.swift; sourceTree = "<group>"; };
 		AB31519A1F67A1970055924F /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		AB31519C1F67B3810055924F /* SampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleTableViewCell.xib; sourceTree = "<group>"; };
+		AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		AB3151A01F67B4D70055924F /* dora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dora.png; sourceTree = "<group>"; };
+		AB3151A21F67B7DC0055924F /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiftyMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,8 +99,11 @@
 				AB3151921F6781A30055924F /* NewMemoViewController.swift */,
 				AB3151981F6783B60055924F /* TodayTaskViewController.swift */,
 				AB3151941F6781DB0055924F /* SelectTaskTypeViewController.swift */,
+				AB3151A21F67B7DC0055924F /* SampleViewController.swift */,
 				AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */,
 				AB3151961F6782500055924F /* ExpiredTaskViewController.swift */,
+				AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */,
+				AB31519C1F67B3810055924F /* SampleTableViewCell.xib */,
 				AB31519A1F67A1970055924F /* MemoViewController.swift */,
 				AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */,
 				AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */,
@@ -107,6 +118,7 @@
 		AB3151851F6673020055924F /* picture */ = {
 			isa = PBXGroup;
 			children = (
+				AB3151A01F67B4D70055924F /* dora.png */,
 				AB3151831F6672F40055924F /* gplaypattern_@2X.png */,
 			);
 			name = picture;
@@ -183,9 +195,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB2EDCAF1F4D4FF2000C34C5 /* LaunchScreen.storyboard in Resources */,
+				AB31519D1F67B3810055924F /* SampleTableViewCell.xib in Resources */,
 				AB2EDCAC1F4D4FF2000C34C5 /* Assets.xcassets in Resources */,
 				AB2EDCAA1F4D4FF2000C34C5 /* Main.storyboard in Resources */,
 				AB3151841F6672F40055924F /* gplaypattern_@2X.png in Resources */,
+				AB3151A11F67B4D70055924F /* dora.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3151A31F67B7DC0055924F /* SampleViewController.swift in Sources */,
 				AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */,
 				AB2EDCB71F4D5910000C34C5 /* ListViewController.swift in Sources */,
 				AB3151951F6781DB0055924F /* SelectTaskTypeViewController.swift in Sources */,
@@ -251,6 +266,7 @@
 				AB3151991F6783B60055924F /* TodayTaskViewController.swift in Sources */,
 				AB3151971F6782500055924F /* ExpiredTaskViewController.swift in Sources */,
 				AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */,
+				AB31519F1F67B3E80055924F /* SampleTableViewCell.swift in Sources */,
 				AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */,
 				AB31519B1F67A1970055924F /* MemoViewController.swift in Sources */,
 			);

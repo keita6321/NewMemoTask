@@ -19,7 +19,9 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         memoTableView.delegate = self
         memoTableView.dataSource = self
-        //loadMemo()
+        // カスタムセルの登録
+        let nib = UINib(nibName: "SampleTableViewCell", bundle: Bundle.main)
+        memoTableView.register(nib, forCellReuseIdentifier: "SampleCell")
     }
 
     override func didReceiveMemoryWarning() {
