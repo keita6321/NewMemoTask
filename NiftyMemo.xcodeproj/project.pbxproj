@@ -16,7 +16,11 @@
 		AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */; };
 		AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */; };
 		AB3151841F6672F40055924F /* gplaypattern_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3151831F6672F40055924F /* gplaypattern_@2X.png */; };
-		AB3151891F66827E0055924F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151881F66827E0055924F /* MemoViewController.swift */; };
+		AB3151931F6781A30055924F /* NewMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151921F6781A30055924F /* NewMemoViewController.swift */; };
+		AB3151951F6781DB0055924F /* SelectTaskTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151941F6781DB0055924F /* SelectTaskTypeViewController.swift */; };
+		AB3151971F6782500055924F /* ExpiredTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151961F6782500055924F /* ExpiredTaskViewController.swift */; };
+		AB3151991F6783B60055924F /* TodayTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151981F6783B60055924F /* TodayTaskViewController.swift */; };
+		AB31519B1F67A1970055924F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31519A1F67A1970055924F /* MemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +36,11 @@
 		AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
 		AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AB3151831F6672F40055924F /* gplaypattern_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gplaypattern_@2X.png"; sourceTree = "<group>"; };
-		AB3151881F66827E0055924F /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		AB3151921F6781A30055924F /* NewMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemoViewController.swift; sourceTree = "<group>"; };
+		AB3151941F6781DB0055924F /* SelectTaskTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTaskTypeViewController.swift; sourceTree = "<group>"; };
+		AB3151961F6782500055924F /* ExpiredTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiredTaskViewController.swift; sourceTree = "<group>"; };
+		AB3151981F6783B60055924F /* TodayTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTaskViewController.swift; sourceTree = "<group>"; };
+		AB31519A1F67A1970055924F /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiftyMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,8 +88,12 @@
 			children = (
 				AB3151851F6673020055924F /* picture */,
 				AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */,
+				AB3151921F6781A30055924F /* NewMemoViewController.swift */,
+				AB3151981F6783B60055924F /* TodayTaskViewController.swift */,
+				AB3151941F6781DB0055924F /* SelectTaskTypeViewController.swift */,
 				AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */,
-				AB3151881F66827E0055924F /* MemoViewController.swift */,
+				AB3151961F6782500055924F /* ExpiredTaskViewController.swift */,
+				AB31519A1F67A1970055924F /* MemoViewController.swift */,
 				AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */,
 				AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */,
 				AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */,
@@ -234,9 +246,13 @@
 			files = (
 				AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */,
 				AB2EDCB71F4D5910000C34C5 /* ListViewController.swift in Sources */,
-				AB3151891F66827E0055924F /* MemoViewController.swift in Sources */,
+				AB3151951F6781DB0055924F /* SelectTaskTypeViewController.swift in Sources */,
+				AB3151931F6781A30055924F /* NewMemoViewController.swift in Sources */,
+				AB3151991F6783B60055924F /* TodayTaskViewController.swift in Sources */,
+				AB3151971F6782500055924F /* ExpiredTaskViewController.swift in Sources */,
 				AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */,
 				AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */,
+				AB31519B1F67A1970055924F /* MemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
