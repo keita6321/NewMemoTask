@@ -9,23 +9,67 @@
 import UIKit
 import NCMB
 import UserNotifications
+import NotificationCenter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-    let center = UNUserNotificationCenter.current()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         NCMB.setApplicationKey("0e456185806caff47387073ca562dbc64ddecd2692cea091cef40d35c49fcca1", clientKey: "f1a03864ed8e757e6d57f72b5cb5209d96e69ee3edf587777b21a6b54b694249")
-        self.center.delegate = self
+        
+        //Notification登録前のおまじない。テストの為、現在のノーティフケーションを削除します
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests();
+        //Notification登録前のおまじない。これがないとpermissionエラーが発生するので必要です。
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in if granted {print("通知許可")}
+        else{
+            print("通知不許可")
+            }
+        }
+        //以下で登録処理
+        //以下で登録処理
+        let content = UNMutableNotificationContent()
+        content.title = "hogehoge";
+        content.body = "swift-saralymanからの通知だよ";
+        content.sound = UNNotificationSound.default()
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)//５秒後
+        let request = UNNotificationRequest.init(identifier: "TestNotification", content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        center.add(request)
+        center.delegate = self
+        
         return true
     }
     
+    //上記のNotificationを受け取る関数
+    //ポップアップ表示のタイミングで呼ばれる関数
+    //（アプリがアクティブ、非アクテイブ、アプリ未起動,バックグラウンドでも呼ばれる）
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
+        completionHandler([.alert,.sound])
     }
+    
+    //ポップアップ押した後に呼ばれる関数(↑の関数が呼ばれた後に呼ばれる)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        //Alertダイアログでテスト表示
+        let contentBody = response.notification.request.content.body
+        let alert:UIAlertController = UIAlertController(title: "受け取りました", message: contentBody, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (action:UIAlertAction!) -> Void in
+            print("Alert押されました")
+        }))
+        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+        
+        completionHandler()
+    }
+    
+    
+    //func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        //completionHandler([.alert, .sound])
+    //}
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

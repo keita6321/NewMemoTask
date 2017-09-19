@@ -24,7 +24,7 @@
 		AB31519D1F67B3810055924F /* SampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB31519C1F67B3810055924F /* SampleTableViewCell.xib */; };
 		AB31519F1F67B3E80055924F /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */; };
 		AB3151A11F67B4D70055924F /* dora.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3151A01F67B4D70055924F /* dora.png */; };
-		AB3151A31F67B7DC0055924F /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151A21F67B7DC0055924F /* SampleViewController.swift */; };
+		AB3151A71F67F3750055924F /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151A61F67F3750055924F /* SampleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 		AB31519C1F67B3810055924F /* SampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleTableViewCell.xib; sourceTree = "<group>"; };
 		AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
 		AB3151A01F67B4D70055924F /* dora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dora.png; sourceTree = "<group>"; };
-		AB3151A21F67B7DC0055924F /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		AB3151A61F67F3750055924F /* SampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
 		BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiftyMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,7 +99,7 @@
 				AB3151921F6781A30055924F /* NewMemoViewController.swift */,
 				AB3151981F6783B60055924F /* TodayTaskViewController.swift */,
 				AB3151941F6781DB0055924F /* SelectTaskTypeViewController.swift */,
-				AB3151A21F67B7DC0055924F /* SampleViewController.swift */,
+				AB3151A61F67F3750055924F /* SampleTableViewController.swift */,
 				AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */,
 				AB3151961F6782500055924F /* ExpiredTaskViewController.swift */,
 				AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */,
@@ -258,13 +258,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB3151A31F67B7DC0055924F /* SampleViewController.swift in Sources */,
 				AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */,
 				AB2EDCB71F4D5910000C34C5 /* ListViewController.swift in Sources */,
 				AB3151951F6781DB0055924F /* SelectTaskTypeViewController.swift in Sources */,
 				AB3151931F6781A30055924F /* NewMemoViewController.swift in Sources */,
 				AB3151991F6783B60055924F /* TodayTaskViewController.swift in Sources */,
 				AB3151971F6782500055924F /* ExpiredTaskViewController.swift in Sources */,
+				AB3151A71F67F3750055924F /* SampleTableViewController.swift in Sources */,
 				AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */,
 				AB31519F1F67B3E80055924F /* SampleTableViewCell.swift in Sources */,
 				AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */,

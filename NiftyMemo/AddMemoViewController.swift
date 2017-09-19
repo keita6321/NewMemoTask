@@ -9,20 +9,29 @@
 import UIKit
 import NCMB
 import SVProgressHUD
-import UserNotificationsUI
 import UserNotifications
 
-class AddMemoViewController: UIViewController, UITextFieldDelegate, UNUserNotificationCenterDelegate {
-    
+class AddMemoViewController: UIViewController, UITextFieldDelegate {
+//class AddMemoViewController: UIViewController, UITextFieldDelegate {
+  
     
     @IBOutlet var textDatePicker: UITextField!
     let datePicker = UIDatePicker()
+    let center = UNUserNotificationCenter.current()
     
+    @IBOutlet weak var datePicker2: UIDatePicker!
     @IBOutlet var memoTextView: UITextView!
-    @IBOutlet var label: UILabel!
+    //@IBOutlet var label: UILabel!
+    @IBOutlet var noticeTest: UITextField!
+    var str: String!
+    
+    @IBOutlet weak var pickerLabel1: UILabel!
+    @IBOutlet weak var pickerLabel2: UILabel!
+    @IBOutlet weak var alertCountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //noticeTest.delegate = self
         showDatePicker()
     }
     
@@ -33,6 +42,15 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate, UNUserNotifi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    //キーボードのリターンが押されたときの処理
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        str = textField.text!
+        textField.resignFirstResponder()
+        return true
     }
     
     //--------datepicker------------
@@ -75,6 +93,19 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate, UNUserNotifi
     }
     
     //------------------------------
+    @IBAction func pickerValueChanged(_ sender: Any) {
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        let formatter2 = DateFormatter()
+        var now = Date()
+        var count = calendar.dateComponents([.second], from: now, to: datePicker2.date).second
+        formatter.dateFormat = "YYYY/MM/dd"
+        pickerLabel1.text = formatter.string(from: datePicker2.date)
+        formatter2.dateFormat = "hh:mm a"
+        pickerLabel2.text = formatter2.string(from: datePicker2.date)
+        
+        alertCountLabel.text = String(describing: count!)
+    }
     
     @IBAction func addLabel(){
         
@@ -88,45 +119,27 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate, UNUserNotifi
         object?.setObject(false, forKey: "today")
         object?.setObject(false, forKey: "done")
         object?.setObject(false, forKey: "expired")
-        //object?.setObject("テスト", forKey: "label")
         
         object?.saveInBackground({ (error) in
             if error != nil{
                 SVProgressHUD.showError(withStatus: error?.localizedDescription)
             }
             else{
-                //let alertController = UIAlertController(title: "保存完了", message: "メモの保存が完了。メモ一覧に戻ります", preferredStyle: .alert)
-                //    let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 self.navigationController?.popViewController(animated: true)
-                //    })
-                //    alertController.addAction(action)
-                //    self.present(alertController, animated: true, completion: nil)
             }
         })
-        //---------------------------------------
-        //if #available(iOS 10.0, *) {
-            // iOS 10
-        //    let center = UNUserNotificationCenter.current()
-        //    center.requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in
-        //        if error != nil {
-        //            return
-        //        }
-                
-        //        if granted {
-        //            print("通知許可")
-        //            let center = UNUserNotificationCenter.current()
-        //            center.delegate = self as! UNUserNotificationCenterDelegate
-        //        } else {
-        //            print("通知拒否")
-        //        }
-        //    })
-            
-        //} else {
-            // iOS 9以下
-        //    let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
-        //    UIApplication.shared.registerUserNotificationSettings(settings)
-        //}
-        //---------------------------------------
+        let content = UNMutableNotificationContent()
+        let calendar = Calendar.current
+        let now = Date()
+        content.title = "スケジュール";
+        content.body = "さっさとやろう";
+        content.sound = UNNotificationSound.default()
+        var count = calendar.dateComponents([.second], from: now, to: datePicker2.date).second
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: TimeInterval(count as! Int), repeats: false)
+        let request = UNNotificationRequest.init(identifier: "Alert", content: content, trigger: trigger)
+        center.add(request)
+        print(count)
+        print("アラートをセットしました")
     }
     @IBAction func save2(){
         let object = NCMBObject(className: "NiftyMemo")
@@ -135,7 +148,6 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate, UNUserNotifi
         object?.setObject(false, forKey: "today")
         object?.setObject(false, forKey: "done")
         object?.setObject(false, forKey: "expired")
-        //object?.setObject("テスト", forKey: "label")
         
         object?.saveInBackground({ (error) in
             if error != nil{
@@ -145,6 +157,19 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate, UNUserNotifi
                 self.navigationController?.popViewController(animated: true)
             }
         })
+        let content = UNMutableNotificationContent()
+        let calendar = Calendar.current
+        let now = Date()
+        content.title = "スケジュール";
+        content.body = "さっさとやろう";
+        content.sound = UNNotificationSound.default()
+        var count = calendar.dateComponents([.second], from: now, to: datePicker2.date).second
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: TimeInterval(count as! Int), repeats: false)
+        let request = UNNotificationRequest.init(identifier: "Alert", content: content, trigger: trigger)
+        center.add(request)
+        print(count)
+        print("アラートをセットしました")
+        
     }
 
     

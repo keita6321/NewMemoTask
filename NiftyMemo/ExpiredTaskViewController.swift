@@ -19,6 +19,7 @@ class ExpiredTaskViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         memoTableView.dataSource = self
         memoTableView.delegate = self
+        memoTableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -29,20 +30,6 @@ class ExpiredTaskViewController: UIViewController, UITableViewDataSource, UITabl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //メモの個数を返す
-    //func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //    return memoArray.count
-    //}
-    //セルを返す
-    //func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-        // cell内のcontentViewの背景を透過
-    //    cell.backgroundColor = UIColor.clear
-    //    cell.contentView.backgroundColor = UIColor.clear
-    //    cell.textLabel?.text = memoArray[indexPath.row].object(forKey: "text") as! String
-    //    return cell
-    //}
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
