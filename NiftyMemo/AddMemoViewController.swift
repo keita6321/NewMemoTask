@@ -12,8 +12,7 @@ import SVProgressHUD
 import UserNotifications
 
 class AddMemoViewController: UIViewController, UITextFieldDelegate {
-//class AddMemoViewController: UIViewController, UITextFieldDelegate {
-  
+    
     
     @IBOutlet var textDatePicker: UITextField!
     let datePicker = UIDatePicker()
@@ -21,7 +20,6 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var datePicker2: UIDatePicker!
     @IBOutlet var memoTextView: UITextView!
-    //@IBOutlet var label: UILabel!
     @IBOutlet var noticeTest: UITextField!
     var str: String!
     
@@ -32,7 +30,7 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //noticeTest.delegate = self
-        showDatePicker()
+        //showDatePicker()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,10 +68,10 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
         toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
         
         // add toolbar to textField
-        textDatePicker.inputAccessoryView = toolbar
+        //textDatePicker.inputAccessoryView = toolbar
         // add datepicker to textField
         datePicker.datePickerMode = UIDatePickerMode.date
-        textDatePicker.inputView = datePicker
+        //textDatePicker.inputView = datePicker
     }
     
     func donedatePicker(){
@@ -115,7 +113,8 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
     @IBAction func save(){
         let object = NCMBObject(className: "NiftyMemo")
         object?.setObject(memoTextView.text, forKey: "text")
-        object?.setObject(textDatePicker.text, forKey: "limit")
+        //object?.setObject(textDatePicker.text, forKey: "limit")
+        object?.setObject(datePicker2.date, forKey: "limit")
         object?.setObject(false, forKey: "today")
         object?.setObject(false, forKey: "done")
         object?.setObject(false, forKey: "expired")
@@ -128,18 +127,22 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
                 self.navigationController?.popViewController(animated: true)
             }
         })
+        
         let content = UNMutableNotificationContent()
         let calendar = Calendar.current
         let now = Date()
-        content.title = "スケジュール";
-        content.body = "さっさとやろう";
-        content.sound = UNNotificationSound.default()
-        var count = calendar.dateComponents([.second], from: now, to: datePicker2.date).second
-        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: TimeInterval(count as! Int), repeats: false)
-        let request = UNNotificationRequest.init(identifier: "Alert", content: content, trigger: trigger)
-        center.add(request)
-        print(count)
-        print("アラートをセットしました")
+        if(datePicker2.date>now){
+            content.title = "スケジュール";
+            content.body = "さっさとやろう";
+            content.sound = UNNotificationSound.default()
+            var count = calendar.dateComponents([.second], from: now, to: datePicker2.date).second
+            let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: TimeInterval(count as! Int), repeats: false)
+            let request = UNNotificationRequest.init(identifier: "Alert", content: content, trigger: trigger)
+            center.add(request)
+            print(count)
+            print("アラートをセットしました")
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func save2(){
         let object = NCMBObject(className: "NiftyMemo")
@@ -169,9 +172,9 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
         center.add(request)
         print(count)
         print("アラートをセットしました")
-        
+        self.navigationController?.popViewController(animated: true)
     }
-
+    
     
     
 }

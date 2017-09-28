@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3BF7ECC65DD38620DCB8AB9F /* Pods_NiftyMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */; };
+		AB0130D71F78CD8F00DF21CB /* SlideTodayTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0130D61F78CD8F00DF21CB /* SlideTodayTaskViewController.swift */; };
+		AB0130D91F78CDA300DF21CB /* SlideExpiredTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0130D81F78CDA300DF21CB /* SlideExpiredTaskViewController.swift */; };
+		AB0131051F7CE8B600DF21CB /* SelectMemoTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0131041F7CE8B600DF21CB /* SelectMemoTypeViewController.swift */; };
+		AB0131071F7CE93E00DF21CB /* SlideNewMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0131061F7CE93E00DF21CB /* SlideNewMemoViewController.swift */; };
 		AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */; };
 		AB2EDCAA1F4D4FF2000C34C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */; };
 		AB2EDCAC1F4D4FF2000C34C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCAB1F4D4FF2000C34C5 /* Assets.xcassets */; };
@@ -25,11 +29,16 @@
 		AB31519F1F67B3E80055924F /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */; };
 		AB3151A11F67B4D70055924F /* dora.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3151A01F67B4D70055924F /* dora.png */; };
 		AB3151A71F67F3750055924F /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151A61F67F3750055924F /* SampleTableViewController.swift */; };
+		AB4BE39A1F78C3FF00EBCEC1 /* SlideTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BE3991F78C3FF00EBCEC1 /* SlideTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3166EBD8C069DD211F7F4246 /* Pods-NiftyMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiftyMemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiftyMemo/Pods-NiftyMemo.release.xcconfig"; sourceTree = "<group>"; };
 		4723C2D3D690F2E5866A557C /* Pods-NiftyMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiftyMemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiftyMemo/Pods-NiftyMemo.debug.xcconfig"; sourceTree = "<group>"; };
+		AB0130D61F78CD8F00DF21CB /* SlideTodayTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTodayTaskViewController.swift; sourceTree = "<group>"; };
+		AB0130D81F78CDA300DF21CB /* SlideExpiredTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideExpiredTaskViewController.swift; sourceTree = "<group>"; };
+		AB0131041F7CE8B600DF21CB /* SelectMemoTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMemoTypeViewController.swift; sourceTree = "<group>"; };
+		AB0131061F7CE93E00DF21CB /* SlideNewMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideNewMemoViewController.swift; sourceTree = "<group>"; };
 		AB2EDCA11F4D4FF2000C34C5 /* NiftyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiftyMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2EDCA91F4D4FF2000C34C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +58,7 @@
 		AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
 		AB3151A01F67B4D70055924F /* dora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dora.png; sourceTree = "<group>"; };
 		AB3151A61F67F3750055924F /* SampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
+		AB4BE3991F78C3FF00EBCEC1 /* SlideTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTaskViewController.swift; sourceTree = "<group>"; };
 		BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiftyMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,8 +111,13 @@
 				AB3151941F6781DB0055924F /* SelectTaskTypeViewController.swift */,
 				AB3151A61F67F3750055924F /* SampleTableViewController.swift */,
 				AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */,
+				AB4BE3991F78C3FF00EBCEC1 /* SlideTaskViewController.swift */,
 				AB3151961F6782500055924F /* ExpiredTaskViewController.swift */,
 				AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */,
+				AB0131061F7CE93E00DF21CB /* SlideNewMemoViewController.swift */,
+				AB0130D61F78CD8F00DF21CB /* SlideTodayTaskViewController.swift */,
+				AB0131041F7CE8B600DF21CB /* SelectMemoTypeViewController.swift */,
+				AB0130D81F78CDA300DF21CB /* SlideExpiredTaskViewController.swift */,
 				AB31519C1F67B3810055924F /* SampleTableViewCell.xib */,
 				AB31519A1F67A1970055924F /* MemoViewController.swift */,
 				AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */,
@@ -261,14 +276,19 @@
 				AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */,
 				AB2EDCB71F4D5910000C34C5 /* ListViewController.swift in Sources */,
 				AB3151951F6781DB0055924F /* SelectTaskTypeViewController.swift in Sources */,
+				AB4BE39A1F78C3FF00EBCEC1 /* SlideTaskViewController.swift in Sources */,
 				AB3151931F6781A30055924F /* NewMemoViewController.swift in Sources */,
+				AB0130D71F78CD8F00DF21CB /* SlideTodayTaskViewController.swift in Sources */,
+				AB0131071F7CE93E00DF21CB /* SlideNewMemoViewController.swift in Sources */,
 				AB3151991F6783B60055924F /* TodayTaskViewController.swift in Sources */,
+				AB0131051F7CE8B600DF21CB /* SelectMemoTypeViewController.swift in Sources */,
 				AB3151971F6782500055924F /* ExpiredTaskViewController.swift in Sources */,
 				AB3151A71F67F3750055924F /* SampleTableViewController.swift in Sources */,
 				AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */,
 				AB31519F1F67B3E80055924F /* SampleTableViewCell.swift in Sources */,
 				AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */,
 				AB31519B1F67A1970055924F /* MemoViewController.swift in Sources */,
+				AB0130D91F78CDA300DF21CB /* SlideExpiredTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +416,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = koga.net.NiftyMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -409,6 +430,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = koga.net.NiftyMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

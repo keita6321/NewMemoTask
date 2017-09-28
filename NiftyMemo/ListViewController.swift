@@ -18,12 +18,16 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var memoArray = [NCMBObject]()
     var memoListBackImage = UIImage(named: "gplaypattern_@2X.png")!
     var imageView: UIImageView!
+    //var ud = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         memoTableView.dataSource = self
         memoTableView.delegate = self
         memoTableView.tableFooterView = UIView()
+        loadMemo()
+        
+        
         //requestAuth()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -112,76 +116,75 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 print(split[0],split[1],split[2])
                 
                 for i in 0...(result?.count)!-1 {//完了済みか否か最初に判断する
-                    if(data[i].object(forKey: "limit")as! String == "期限を設定"){
-                        continue
+                    //if(data[i].object(forKey: "limit")as! String == "期限を設定"){
+                    //    continue
+                    //}
+                    //else{
+                    if(data[i].object(forKey: "done") as! Bool){
+                        //print(i)
+                        data[i].setObject(false, forKey: "expired")
+                        data[i].setObject(false, forKey: "today")
+                        //print("完了済み")
                     }
-                    else{
-                        if(data[i].object(forKey: "done") as! Bool){
-                            print(i)
+                    else{//月の判定
+                        var date = data[i].object(forKey: "limit") as! String
+                        var date_split = date.components(separatedBy: "-")
+                        if("\(date_split[1].substring(to: date_split[1].index(after: date_split[1].startIndex)))" == "0"){
+                            date_split[1] = "\(date_split[1].substring(from: date_split[1].index(before: date_split[1].endIndex)))"
+                        }
+                        
+                        if(Int(date_split[1])! < Int(split[1])!){//月が過ぎてる
+                            //print(i)
+                            //print("もう月変わっちゃってますよ")
+                            data[i].setObject(true, forKey: "expired")
+                            data[i].setObject(true, forKey: "today")
+                        }
+                        else if(Int(date_split[1])! > Int(split[1])!){//翌月以降
+                            //print(i)
+                            //print("まだまだ時間はある")
+                            //print(date_split[1])
                             data[i].setObject(false, forKey: "expired")
                             data[i].setObject(false, forKey: "today")
-                            print("完了済み")
                         }
-                        else{//月の判定
-                            var date = data[i].object(forKey: "limit") as! String
-                            var date_split = date.components(separatedBy: "-")
-                            if("\(date_split[1].substring(to: date_split[1].index(after: date_split[1].startIndex)))" == "0"){
-                                date_split[1] = "\(date_split[1].substring(from: date_split[1].index(before: date_split[1].endIndex)))"
+                        else{//日付で判定
+                            if("\(date_split[2].substring(to: date_split[2].index(after: date_split[2].startIndex)))" == "0"){
+                                date_split[2] = "\(date_split[2].substring(from: date_split[2].index(before: date_split[2].endIndex)))"
                             }
-                            
-                            if(Int(date_split[1])! < Int(split[1])!){//月が過ぎてる
-                                print(i)
-                                print("もう月変わっちゃってますよ")
+                            if(Int(date_split[2])! < Int(split[2])!){//31日＞30日
+                                //print(i)
+                                //print("締め切り過ぎてますが")
                                 data[i].setObject(true, forKey: "expired")
                                 data[i].setObject(true, forKey: "today")
                             }
-                            else if(Int(date_split[1])! > Int(split[1])!){//翌月以降
-                                print(i)
-                                print("まだまだ時間はある")
-                                print(date_split[1])
+                            else if(Int(date_split[2])! > Int(split[2])!){
+                                //print(i)
+                                //print("早めに進めましょう")
                                 data[i].setObject(false, forKey: "expired")
                                 data[i].setObject(false, forKey: "today")
                             }
-                            else{//日付で判定
-                                if("\(date_split[2].substring(to: date_split[2].index(after: date_split[2].startIndex)))" == "0"){
-                                    date_split[2] = "\(date_split[2].substring(from: date_split[2].index(before: date_split[2].endIndex)))"
-                                }
-                                if(Int(date_split[2])! < Int(split[2])!){//31日＞30日
-                                    print(i)
-                                    print("締め切り過ぎてますが")
-                                    data[i].setObject(true, forKey: "expired")
-                                    data[i].setObject(true, forKey: "today")
-                                }
-                                else if(Int(date_split[2])! > Int(split[2])!){
-                                    print(i)
-                                    print("早めに進めましょう")
-                                    data[i].setObject(false, forKey: "expired")
-                                    data[i].setObject(false, forKey: "today")
-                                }
-                                else{
-                                    print(i)
-                                    print("今日までですよー")
-                                    data[i].setObject(false, forKey: "expired")
-                                    data[i].setObject(true, forKey: "today")
-                                }
+                            else{
+                                //print(i)
+                                //print("今日までですよー")
+                                data[i].setObject(false, forKey: "expired")
+                                data[i].setObject(true, forKey: "today")
                             }
                         }
+                        //}
                     }
                     data[i].saveInBackground({ (error) in
-                        print(i)
+                        //print(i)
                         if(error != nil){
                             SVProgressHUD.showError(withStatus: error?.localizedDescription)
                         }
                         else{
-                            print("ok"+String(i))
+                            //print("limit saved"+String(i))
                         }
                     })
                 }
             }
         })
     }
-    
-    
+    //AllTask画面が呼び出されるたびに必ず実行される期限チェック関数
     func checkLimit2(){
         let query = NCMBQuery(className: "NiftyMemo")
         
@@ -195,74 +198,39 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
             else{//本題
                 var data = result as! [NCMBObject]
                 let calendar = Calendar.current
-                let d = Date()
-                let str2: [String] = [String(calendar.component(.year, from: d)),String(calendar.component(.month, from: d)),String(calendar.component(.day, from: d))]
-                var split = str2//今日の日付
-                print(split[0],split[1],split[2])
+                let now = Date()
                 
-                for i in 0...(result?.count)!-1 {//完了済みか否か最初に判断する
-                    if(data[i].object(forKey: "limit")as! String == "期限を設定"){
-                        continue
+                for i in 0...(result?.count)!-1 {//完了済みなら処理対象外
+                    if(data[i].object(forKey: "done") as! Bool){
+                        data[i].setObject(false, forKey: "expired")
+                        data[i].setObject(false, forKey: "today")
                     }
                     else{
-                        if(data[i].object(forKey: "done") as! Bool){
-                            print(i)
+                        var date = data[i].object(forKey: "limit") as! Date//Date型
+                        //let b = Calendar.current
+                        //let c = calendar.date(byAdding: .minute, value: 1, to: Date())!
+                        
+                        if(now < date){
+                            print("まだおk")
                             data[i].setObject(false, forKey: "expired")
                             data[i].setObject(false, forKey: "today")
-                            print("完了済み")
                         }
-                        else{//月の判定
-                            var date = data[i].object(forKey: "limit") as! String
-                            var date_split = date.components(separatedBy: "-")
-                            if("\(date_split[1].substring(to: date_split[1].index(after: date_split[1].startIndex)))" == "0"){
-                                date_split[1] = "\(date_split[1].substring(from: date_split[1].index(before: date_split[1].endIndex)))"
-                            }
-                            
-                            if(Int(date_split[1])! < Int(split[1])!){//月が過ぎてる
-                                print(i)
-                                print("もう月変わっちゃってますよ")
-                                data[i].setObject(true, forKey: "expired")
-                                data[i].setObject(true, forKey: "today")
-                            }
-                            else if(Int(date_split[1])! > Int(split[1])!){//翌月以降
-                                print(i)
-                                print("まだまだ時間はある")
-                                print(date_split[1])
-                                data[i].setObject(false, forKey: "expired")
-                                data[i].setObject(false, forKey: "today")
-                            }
-                            else{//日付で判定
-                                if("\(date_split[2].substring(to: date_split[2].index(after: date_split[2].startIndex)))" == "0"){
-                                    date_split[2] = "\(date_split[2].substring(from: date_split[2].index(before: date_split[2].endIndex)))"
-                                }
-                                if(Int(date_split[2])! < Int(split[2])!){//31日＞30日
-                                    print(i)
-                                    print("締め切り過ぎてますが")
-                                    data[i].setObject(true, forKey: "expired")
-                                    data[i].setObject(true, forKey: "today")
-                                }
-                                else if(Int(date_split[2])! > Int(split[2])!){
-                                    print(i)
-                                    print("早めに進めましょう")
-                                    data[i].setObject(false, forKey: "expired")
-                                    data[i].setObject(false, forKey: "today")
-                                }
-                                else{
-                                    print(i)
-                                    print("今日までですよー")
-                                    data[i].setObject(false, forKey: "expired")
-                                    data[i].setObject(true, forKey: "today")
-                                }
-                            }
+                        else{
+                            print("期限切れです")
+                            data[i].setObject(true, forKey: "today")
+                            data[i].setObject(true, forKey: "expired")
+                        }
+                        if(calendar.component(.day, from: now)==calendar.component(.day, from: date)){
+                            print("今日まで")
+                            data[i].setObject(true, forKey: "today")
                         }
                     }
                     data[i].saveInBackground({ (error) in
-                        print(i)
                         if(error != nil){
                             SVProgressHUD.showError(withStatus: error?.localizedDescription)
                         }
                         else{
-                            print("ok"+String(i))
+                            //print("limit saved"+String(i))
                         }
                     })
                 }
@@ -282,21 +250,9 @@ class ListViewController: UIViewController,UITableViewDataSource, UITableViewDel
             else{
                 self.memoArray = result as! [NCMBObject]//DBから全件取得して
                 self.memoTableView.reloadData()//こちらで扱うmemoArrayに格納
-                self.checkLimit()
+                self.checkLimit2()
             }
         })
     }
-    /*func requestAuth() {
-        self.myAppDelegate.center.requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in
-            if error != nil {
-                return
-            }
-            if granted {
-                debugPrint("通知許可")
-            } else {
-                debugPrint("通知拒否")
-            }
-        })
-    }*/
     
 }
