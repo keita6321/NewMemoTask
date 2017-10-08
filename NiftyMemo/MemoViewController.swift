@@ -22,6 +22,12 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         // カスタムセルの登録
         let nib = UINib(nibName: "SampleTableViewCell", bundle: Bundle.main)
         memoTableView.register(nib, forCellReuseIdentifier: "SampleCell")
+        //print("タブバーの高さ")
+        //print(tabBarController?.tabBar.frame.height)
+        //print("なびばーの高さ")
+        //print((navigationController?.navigationBar.frame.height)!)
+        memoTableView.tableFooterView = UIView()
+        loadMemo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,11 +44,62 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     //セルを返す
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SampleCell")!
         cell.textLabel?.text = memoArray[indexPath.row].object(forKey: "text") as! String
         return cell
     }
 
+    //選択したセルを認識
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetail", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)//選択を解除される
+    }
+    //値渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail"{
+            let detailMemoViewController = segue.destination as! DetailMemoViewController
+            let selectedIndex = memoTableView.indexPathForSelectedRow!
+            detailMemoViewController.selectedMemo = memoArray[selectedIndex.row]
+            //ncmbObjectごと投げる
+            
+            //DetailMemoViewController.sele = memoArray[selectedIndex.row]
+        }
+    }
+    
+    //スワイプ削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //選択しているセルの削除
+        print(memoArray.count)
+        print(indexPath.row)
+        if editingStyle == .delete {
+            //tableViewのセルが削除される
+            let query = NCMBQuery(className: "Memo")
+            query?.whereKey("objectId", equalTo: memoArray[indexPath.row].object(forKey: "objectId"))
+            query?.findObjectsInBackground({ (result, error) in
+                if error != nil{
+                    SVProgressHUD.showError(withStatus: error?.localizedDescription)
+                }
+                else{
+                    print (type(of: result))
+                    let memo = result as! [NCMBObject]
+                    let textObject = memo.first//一つしかないしfirstでいい
+                    textObject?.deleteInBackground({ (error) in
+                        if error != nil{
+                            SVProgressHUD.showError(withStatus: error?.localizedDescription)
+                        }
+                        else{
+                            print("delete sucsess")
+                        }
+                    })
+                }
+            })
+            memoArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        print(memoArray.count)
+    }
+
+    
 
     func loadMemo(){
         let query = NCMBQuery(className: "Memo")

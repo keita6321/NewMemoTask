@@ -10,10 +10,10 @@ import UIKit
 import NCMB
 import SVProgressHUD
 
-class DetailViewController: UIViewController {
+class DetailTaskViewController: UIViewController {
 
     @IBOutlet var textDatePicker: UITextField!
-    let datePicker = UIDatePicker()
+    @IBOutlet var datePicker: UIDatePicker!
     //var limit :String = ""
 
     @IBOutlet var memoTextView: UITextView!
@@ -24,8 +24,9 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         memoTextView.text = selectedMemo.object(forKey: "text") as! String
         //textDatePicker.text = format(date: selectedMemo.object(forKey: "limit") as! Date)
-        showDatePicker()
-        textDatePicker.text = selectedMemo.object(forKey: "limit") as! String
+        //showDatePicker()
+        //textDatePicker.text = selectedMemo.object(forKey: "limit") as! String
+        datePicker.date = selectedMemo.object(forKey: "limit") as! Date
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +85,7 @@ class DetailViewController: UIViewController {
     //メモの内容を変更
     @IBAction func update(){
         selectedMemo.setObject(memoTextView.text, forKey: "text")
-        selectedMemo.setObject(textDatePicker.text, forKey: "limit")
+        selectedMemo.setObject(datePicker.date, forKey: "limit")
 
         selectedMemo.saveInBackground { (error) in
             if error != nil{
@@ -103,6 +104,7 @@ class DetailViewController: UIViewController {
             }
             else{
                 print("change doneFlag")
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }

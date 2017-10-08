@@ -8,57 +8,67 @@
 
 /* Begin PBXBuildFile section */
 		3BF7ECC65DD38620DCB8AB9F /* Pods_NiftyMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */; };
-		AB0130D71F78CD8F00DF21CB /* SlideTodayTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0130D61F78CD8F00DF21CB /* SlideTodayTaskViewController.swift */; };
-		AB0130D91F78CDA300DF21CB /* SlideExpiredTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0130D81F78CDA300DF21CB /* SlideExpiredTaskViewController.swift */; };
-		AB0131051F7CE8B600DF21CB /* SelectMemoTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0131041F7CE8B600DF21CB /* SelectMemoTypeViewController.swift */; };
-		AB0131071F7CE93E00DF21CB /* SlideNewMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0131061F7CE93E00DF21CB /* SlideNewMemoViewController.swift */; };
+		AB0131051F7CE8B600DF21CB /* LeftMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0131041F7CE8B600DF21CB /* LeftMemoViewController.swift */; };
+		AB0131071F7CE93E00DF21CB /* SlideMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0131061F7CE93E00DF21CB /* SlideMemoViewController.swift */; };
 		AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */; };
 		AB2EDCAA1F4D4FF2000C34C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */; };
 		AB2EDCAC1F4D4FF2000C34C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCAB1F4D4FF2000C34C5 /* Assets.xcassets */; };
 		AB2EDCAF1F4D4FF2000C34C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCAD1F4D4FF2000C34C5 /* LaunchScreen.storyboard */; };
-		AB2EDCB71F4D5910000C34C5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */; };
-		AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */; };
-		AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */; };
+		AB2EDCB71F4D5910000C34C5 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCB61F4D5910000C34C5 /* TaskViewController.swift */; };
+		AB2EDCB91F4D5922000C34C5 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCB81F4D5922000C34C5 /* AddTaskViewController.swift */; };
+		AB2EDCBB1F4D5945000C34C5 /* DetailTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCBA1F4D5945000C34C5 /* DetailTaskViewController.swift */; };
 		AB3151841F6672F40055924F /* gplaypattern_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3151831F6672F40055924F /* gplaypattern_@2X.png */; };
-		AB3151931F6781A30055924F /* NewMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151921F6781A30055924F /* NewMemoViewController.swift */; };
-		AB3151951F6781DB0055924F /* SelectTaskTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151941F6781DB0055924F /* SelectTaskTypeViewController.swift */; };
-		AB3151971F6782500055924F /* ExpiredTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151961F6782500055924F /* ExpiredTaskViewController.swift */; };
-		AB3151991F6783B60055924F /* TodayTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151981F6783B60055924F /* TodayTaskViewController.swift */; };
+		AB3151931F6781A30055924F /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151921F6781A30055924F /* AddMemoViewController.swift */; };
+		AB3151951F6781DB0055924F /* LeftTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151941F6781DB0055924F /* LeftTaskViewController.swift */; };
 		AB31519B1F67A1970055924F /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31519A1F67A1970055924F /* MemoViewController.swift */; };
 		AB31519D1F67B3810055924F /* SampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB31519C1F67B3810055924F /* SampleTableViewCell.xib */; };
 		AB31519F1F67B3E80055924F /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */; };
 		AB3151A11F67B4D70055924F /* dora.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3151A01F67B4D70055924F /* dora.png */; };
 		AB3151A71F67F3750055924F /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3151A61F67F3750055924F /* SampleTableViewController.swift */; };
 		AB4BE39A1F78C3FF00EBCEC1 /* SlideTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BE3991F78C3FF00EBCEC1 /* SlideTaskViewController.swift */; };
+		AB8872D51F823A8100755449 /* update-th.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8872D41F823A8100755449 /* update-th.png */; };
+		AB8872D71F823AE200755449 /* save-md.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8872D61F823AE200755449 /* save-md.png */; };
+		AB8872DE1F82402C00755449 /* memo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8872DC1F82402C00755449 /* memo.png */; };
+		AB8872E31F82434400755449 /* january-2011-calendar-md (1).png in Resources */ = {isa = PBXBuildFile; fileRef = AB8872E21F82434400755449 /* january-2011-calendar-md (1).png */; };
+		AB8872E51F8243CA00755449 /* task.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8872E41F8243CA00755449 /* task.png */; };
+		AB8872E91F8362A200755449 /* DetailMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8872E81F8362A200755449 /* DetailMemoViewController.swift */; };
+		ABEA59FC1F849F7A00188F7A /* finish-md.png in Resources */ = {isa = PBXBuildFile; fileRef = ABEA59FB1F849F7A00188F7A /* finish-md.png */; };
+		ABEA59FF1F84C4D700188F7A /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA59FD1F84C4D700188F7A /* TaskTableViewCell.swift */; };
+		ABEA5A001F84C4D700188F7A /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEA59FE1F84C4D700188F7A /* TaskTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3166EBD8C069DD211F7F4246 /* Pods-NiftyMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiftyMemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiftyMemo/Pods-NiftyMemo.release.xcconfig"; sourceTree = "<group>"; };
 		4723C2D3D690F2E5866A557C /* Pods-NiftyMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiftyMemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiftyMemo/Pods-NiftyMemo.debug.xcconfig"; sourceTree = "<group>"; };
-		AB0130D61F78CD8F00DF21CB /* SlideTodayTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTodayTaskViewController.swift; sourceTree = "<group>"; };
-		AB0130D81F78CDA300DF21CB /* SlideExpiredTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideExpiredTaskViewController.swift; sourceTree = "<group>"; };
-		AB0131041F7CE8B600DF21CB /* SelectMemoTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMemoTypeViewController.swift; sourceTree = "<group>"; };
-		AB0131061F7CE93E00DF21CB /* SlideNewMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideNewMemoViewController.swift; sourceTree = "<group>"; };
+		AB0131041F7CE8B600DF21CB /* LeftMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMemoViewController.swift; sourceTree = "<group>"; };
+		AB0131061F7CE93E00DF21CB /* SlideMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMemoViewController.swift; sourceTree = "<group>"; };
 		AB2EDCA11F4D4FF2000C34C5 /* NiftyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiftyMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2EDCA91F4D4FF2000C34C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB2EDCAB1F4D4FF2000C34C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB2EDCAE1F4D4FF2000C34C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB2EDCB01F4D4FF2000C34C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
-		AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AB2EDCB61F4D5910000C34C5 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		AB2EDCB81F4D5922000C34C5 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		AB2EDCBA1F4D5945000C34C5 /* DetailTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTaskViewController.swift; sourceTree = "<group>"; };
 		AB3151831F6672F40055924F /* gplaypattern_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gplaypattern_@2X.png"; sourceTree = "<group>"; };
-		AB3151921F6781A30055924F /* NewMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMemoViewController.swift; sourceTree = "<group>"; };
-		AB3151941F6781DB0055924F /* SelectTaskTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTaskTypeViewController.swift; sourceTree = "<group>"; };
-		AB3151961F6782500055924F /* ExpiredTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpiredTaskViewController.swift; sourceTree = "<group>"; };
-		AB3151981F6783B60055924F /* TodayTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTaskViewController.swift; sourceTree = "<group>"; };
+		AB3151921F6781A30055924F /* AddMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
+		AB3151941F6781DB0055924F /* LeftTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTaskViewController.swift; sourceTree = "<group>"; };
 		AB31519A1F67A1970055924F /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		AB31519C1F67B3810055924F /* SampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleTableViewCell.xib; sourceTree = "<group>"; };
 		AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
 		AB3151A01F67B4D70055924F /* dora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dora.png; sourceTree = "<group>"; };
 		AB3151A61F67F3750055924F /* SampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
 		AB4BE3991F78C3FF00EBCEC1 /* SlideTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTaskViewController.swift; sourceTree = "<group>"; };
+		AB8872D41F823A8100755449 /* update-th.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "update-th.png"; sourceTree = "<group>"; };
+		AB8872D61F823AE200755449 /* save-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save-md.png"; sourceTree = "<group>"; };
+		AB8872DC1F82402C00755449 /* memo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = memo.png; sourceTree = "<group>"; };
+		AB8872E21F82434400755449 /* january-2011-calendar-md (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "january-2011-calendar-md (1).png"; sourceTree = "<group>"; };
+		AB8872E41F8243CA00755449 /* task.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task.png; sourceTree = "<group>"; };
+		AB8872E81F8362A200755449 /* DetailMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMemoViewController.swift; sourceTree = "<group>"; };
+		ABEA59FB1F849F7A00188F7A /* finish-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "finish-md.png"; sourceTree = "<group>"; };
+		ABEA59FD1F84C4D700188F7A /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		ABEA59FE1F84C4D700188F7A /* TaskTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 		BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NiftyMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,23 +116,22 @@
 			children = (
 				AB3151851F6673020055924F /* picture */,
 				AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */,
-				AB3151921F6781A30055924F /* NewMemoViewController.swift */,
-				AB3151981F6783B60055924F /* TodayTaskViewController.swift */,
-				AB3151941F6781DB0055924F /* SelectTaskTypeViewController.swift */,
-				AB3151A61F67F3750055924F /* SampleTableViewController.swift */,
-				AB2EDCBA1F4D5945000C34C5 /* DetailViewController.swift */,
-				AB4BE3991F78C3FF00EBCEC1 /* SlideTaskViewController.swift */,
-				AB3151961F6782500055924F /* ExpiredTaskViewController.swift */,
-				AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */,
-				AB0131061F7CE93E00DF21CB /* SlideNewMemoViewController.swift */,
-				AB0130D61F78CD8F00DF21CB /* SlideTodayTaskViewController.swift */,
-				AB0131041F7CE8B600DF21CB /* SelectMemoTypeViewController.swift */,
-				AB0130D81F78CDA300DF21CB /* SlideExpiredTaskViewController.swift */,
-				AB31519C1F67B3810055924F /* SampleTableViewCell.xib */,
-				AB31519A1F67A1970055924F /* MemoViewController.swift */,
 				AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */,
-				AB2EDCB61F4D5910000C34C5 /* ListViewController.swift */,
-				AB2EDCB81F4D5922000C34C5 /* AddMemoViewController.swift */,
+				AB2EDCB61F4D5910000C34C5 /* TaskViewController.swift */,
+				AB2EDCB81F4D5922000C34C5 /* AddTaskViewController.swift */,
+				AB3151941F6781DB0055924F /* LeftTaskViewController.swift */,
+				AB4BE3991F78C3FF00EBCEC1 /* SlideTaskViewController.swift */,
+				AB2EDCBA1F4D5945000C34C5 /* DetailTaskViewController.swift */,
+				ABEA59FD1F84C4D700188F7A /* TaskTableViewCell.swift */,
+				ABEA59FE1F84C4D700188F7A /* TaskTableViewCell.xib */,
+				AB31519A1F67A1970055924F /* MemoViewController.swift */,
+				AB3151921F6781A30055924F /* AddMemoViewController.swift */,
+				AB0131041F7CE8B600DF21CB /* LeftMemoViewController.swift */,
+				AB0131061F7CE93E00DF21CB /* SlideMemoViewController.swift */,
+				AB8872E81F8362A200755449 /* DetailMemoViewController.swift */,
+				AB3151A61F67F3750055924F /* SampleTableViewController.swift */,
+				AB31519E1F67B3E80055924F /* SampleTableViewCell.swift */,
+				AB31519C1F67B3810055924F /* SampleTableViewCell.xib */,
 				AB2EDCAB1F4D4FF2000C34C5 /* Assets.xcassets */,
 				AB2EDCAD1F4D4FF2000C34C5 /* LaunchScreen.storyboard */,
 				AB2EDCB01F4D4FF2000C34C5 /* Info.plist */,
@@ -133,6 +142,12 @@
 		AB3151851F6673020055924F /* picture */ = {
 			isa = PBXGroup;
 			children = (
+				AB8872D61F823AE200755449 /* save-md.png */,
+				AB8872D41F823A8100755449 /* update-th.png */,
+				AB8872E21F82434400755449 /* january-2011-calendar-md (1).png */,
+				AB8872E41F8243CA00755449 /* task.png */,
+				ABEA59FB1F849F7A00188F7A /* finish-md.png */,
+				AB8872DC1F82402C00755449 /* memo.png */,
 				AB3151A01F67B4D70055924F /* dora.png */,
 				AB3151831F6672F40055924F /* gplaypattern_@2X.png */,
 			);
@@ -211,8 +226,15 @@
 			files = (
 				AB2EDCAF1F4D4FF2000C34C5 /* LaunchScreen.storyboard in Resources */,
 				AB31519D1F67B3810055924F /* SampleTableViewCell.xib in Resources */,
+				AB8872DE1F82402C00755449 /* memo.png in Resources */,
+				ABEA59FC1F849F7A00188F7A /* finish-md.png in Resources */,
+				AB8872E31F82434400755449 /* january-2011-calendar-md (1).png in Resources */,
 				AB2EDCAC1F4D4FF2000C34C5 /* Assets.xcassets in Resources */,
+				AB8872E51F8243CA00755449 /* task.png in Resources */,
+				AB8872D51F823A8100755449 /* update-th.png in Resources */,
+				AB8872D71F823AE200755449 /* save-md.png in Resources */,
 				AB2EDCAA1F4D4FF2000C34C5 /* Main.storyboard in Resources */,
+				ABEA5A001F84C4D700188F7A /* TaskTableViewCell.xib in Resources */,
 				AB3151841F6672F40055924F /* gplaypattern_@2X.png in Resources */,
 				AB3151A11F67B4D70055924F /* dora.png in Resources */,
 			);
@@ -273,22 +295,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB2EDCB91F4D5922000C34C5 /* AddMemoViewController.swift in Sources */,
-				AB2EDCB71F4D5910000C34C5 /* ListViewController.swift in Sources */,
-				AB3151951F6781DB0055924F /* SelectTaskTypeViewController.swift in Sources */,
+				AB2EDCB91F4D5922000C34C5 /* AddTaskViewController.swift in Sources */,
+				AB2EDCB71F4D5910000C34C5 /* TaskViewController.swift in Sources */,
+				AB3151951F6781DB0055924F /* LeftTaskViewController.swift in Sources */,
 				AB4BE39A1F78C3FF00EBCEC1 /* SlideTaskViewController.swift in Sources */,
-				AB3151931F6781A30055924F /* NewMemoViewController.swift in Sources */,
-				AB0130D71F78CD8F00DF21CB /* SlideTodayTaskViewController.swift in Sources */,
-				AB0131071F7CE93E00DF21CB /* SlideNewMemoViewController.swift in Sources */,
-				AB3151991F6783B60055924F /* TodayTaskViewController.swift in Sources */,
-				AB0131051F7CE8B600DF21CB /* SelectMemoTypeViewController.swift in Sources */,
-				AB3151971F6782500055924F /* ExpiredTaskViewController.swift in Sources */,
+				AB3151931F6781A30055924F /* AddMemoViewController.swift in Sources */,
+				AB0131071F7CE93E00DF21CB /* SlideMemoViewController.swift in Sources */,
+				AB0131051F7CE8B600DF21CB /* LeftMemoViewController.swift in Sources */,
 				AB3151A71F67F3750055924F /* SampleTableViewController.swift in Sources */,
+				ABEA59FF1F84C4D700188F7A /* TaskTableViewCell.swift in Sources */,
 				AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */,
 				AB31519F1F67B3E80055924F /* SampleTableViewCell.swift in Sources */,
-				AB2EDCBB1F4D5945000C34C5 /* DetailViewController.swift in Sources */,
+				AB2EDCBB1F4D5945000C34C5 /* DetailTaskViewController.swift in Sources */,
 				AB31519B1F67A1970055924F /* MemoViewController.swift in Sources */,
-				AB0130D91F78CDA300DF21CB /* SlideExpiredTaskViewController.swift in Sources */,
+				AB8872E91F8362A200755449 /* DetailMemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

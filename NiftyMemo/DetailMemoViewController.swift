@@ -1,0 +1,48 @@
+//
+//  DetailViewController.swift
+//  NiftyMemo
+//
+//  Created by nttr on 2017/08/23.
+//  Copyright © 2017年 nttr. All rights reserved.
+//
+
+import UIKit
+import NCMB
+import SVProgressHUD
+
+class DetailMemoViewController: UIViewController {
+    
+    @IBOutlet var textDatePicker: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
+    //var limit :String = ""
+    
+    @IBOutlet var memoTextView: UITextView!
+    var selectedMemo: NCMBObject!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        memoTextView.text = selectedMemo.object(forKey: "text") as! String
+        //datePicker.date = selectedMemo.object(forKey: "limit") as! Date
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    //------------------------------
+    
+    
+    //メモの内容を変更
+    @IBAction func update(){
+        selectedMemo.setObject(memoTextView.text, forKey: "text")        
+        selectedMemo.saveInBackground { (error) in
+            if error != nil{
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
+            }
+            else{
+                print("update memo")
+                //self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }}

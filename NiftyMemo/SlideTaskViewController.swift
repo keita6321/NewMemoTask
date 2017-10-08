@@ -4,16 +4,15 @@ import SlideMenuControllerSwift
 class SlideTaskViewController: SlideMenuController {
     
     override func awakeFromNib() {
-        let mainVC = storyboard?.instantiateViewController(withIdentifier: "AllTask")
+        let mainVC = storyboard?.instantiateViewController(withIdentifier: "Task")
         let leftVC = storyboard?.instantiateViewController(withIdentifier: "LeftTask")
-        var ud = UserDefaults.standard
         //UIViewControllerにはNavigationBarは無いためUINavigationControllerを生成しています。
         let navigationController = UINavigationController(rootViewController: mainVC!)
         //ライブラリ特有のプロパティにセット
         mainViewController = navigationController
         leftViewController = leftVC
-        SlideMenuOptions.leftViewWidth.subtract(100)
-        ud.set(SlideMenuOptions.leftViewWidth, forKey: "LW")
+        SlideMenuOptions.leftViewWidth = 200
+        print("allTaskViewの左ページ幅")
         print(SlideMenuOptions.leftViewWidth)
         super.awakeFromNib()
     }

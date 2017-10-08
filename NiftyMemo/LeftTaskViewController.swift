@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectTaskTypeViewController: UIViewController {
+class LeftTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,24 @@ class SelectTaskTypeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func all() {
+        self.slideMenuController()?.closeLeft()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.selectedType = 0
+    }
+    
+    @IBAction func expired() {
+        self.slideMenuController()?.closeLeft()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.selectedType = 1
+    }
+    
+    @IBAction func today() {
+        self.slideMenuController()?.closeLeft()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.selectedType = 2
     }
     
 
