@@ -10,7 +10,7 @@ import UIKit
 import NCMB
 import SVProgressHUD
 
-class AddMemoViewController: UIViewController, UITextFieldDelegate {
+class AddMemoViewController: UIViewController {
 
     @IBOutlet var memoTextView:UITextView!
     @IBOutlet var saveButton: UIButton!
@@ -20,6 +20,10 @@ class AddMemoViewController: UIViewController, UITextFieldDelegate {
         saveButton.frame.size.height = saveButton.frame.width // ボタンを正方形にする
         saveButton.layer.cornerRadius = saveButton.frame.width / 2 // 角丸のサイズ（丸ボタン）
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        memoTextView.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {

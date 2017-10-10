@@ -47,8 +47,8 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SampleCell")!
         cell.textLabel?.text = memoArray[indexPath.row].object(forKey: "text") as! String
-        
-        cell.textLabel?.font = UIFont(name: "HarenosoraMincho", size: 17)
+        cell.textLabel?.font = UIFont(name: "HarenosoraMincho", size: 19)
+        cell.textLabel?.textColor = UIColor.init(red: 84/255.0, green: 74/255.0, blue: 46/255.0, alpha: 1)
         
         return cell
     }
