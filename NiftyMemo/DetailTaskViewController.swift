@@ -14,6 +14,8 @@ class DetailTaskViewController: UIViewController {
 
     @IBOutlet var textDatePicker: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var doneButton: UIButton!
     //var limit :String = ""
 
     @IBOutlet var memoTextView: UITextView!
@@ -27,6 +29,10 @@ class DetailTaskViewController: UIViewController {
         //showDatePicker()
         //textDatePicker.text = selectedMemo.object(forKey: "limit") as! String
         datePicker.date = selectedMemo.object(forKey: "limit") as! Date
+        saveButton.frame.size.height = saveButton.frame.width // ボタンを正方形にする
+        saveButton.layer.cornerRadius = saveButton.frame.width / 2 // 角丸のサイズ（丸ボタン）
+        doneButton.frame.size.height = doneButton.frame.width // ボタンを正方形にする
+        doneButton.layer.cornerRadius = doneButton.frame.width / 2 // 角丸のサイズ（丸ボタン）
     }
 
     override func didReceiveMemoryWarning() {

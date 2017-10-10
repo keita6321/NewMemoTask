@@ -38,6 +38,8 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
         self.slideMenuController()?.delegate = self
         
         //requestAuth()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didCloseMenu), name: NSNotification.Name(rawValue: "taskType"), object: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -50,7 +52,6 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
         
         if(appDelegate.selectedType == 2){
             loadTodayMemo2()
-            title?.removeAll()
         }
     }
     
@@ -58,16 +59,17 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
         //all=0, expired=1, today=2
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         print("slectedType \(appDelegate.selectedType)")
+        
+        
+        
         if(appDelegate.selectedType == 0){
             loadAllMemo2()
         }
         if(appDelegate.selectedType == 1){
             loadExpiredMemo2()
         }
-        
         if(appDelegate.selectedType == 2){
             loadTodayMemo2()
-            title?.removeAll()
         }
         
     }
@@ -90,6 +92,7 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
         formatter.dateFormat = "YYYY/MM/dd"
         
         cell.mainLabel.text = memoArray[indexPath.row].object(forKey: "text") as! String
+        cell.mainLabel.font = UIFont(name: "HarenosoraMincho", size: 17)
         cell.dateLabel.text = formatter.string(from: memoArray[indexPath.row].object(forKey: "limit") as! Date)
         return cell
     }
@@ -527,6 +530,25 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 print("update today")
             }
         })
+    }
+    
+    func didCloseMenu(notification: Notification) {
+        print(notification.userInfo)
+        
+        if let userInfo = notification.userInfo {
+            switch userInfo["selectedType"] as! Int {
+            case 0:
+                loadAllMemo2()
+            case 1:
+                loadTodayMemo2()
+            case 2:
+                loadExpiredMemo2()
+            default:
+                break
+            }
+        } else {
+            print("userInfoがnilです")
+        }
     }
     
     

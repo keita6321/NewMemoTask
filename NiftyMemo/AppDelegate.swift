@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
         //以下で登録処理
-        let content = UNMutableNotificationContent()
+        /*let content = UNMutableNotificationContent()
         content.title = "タイトル";
         content.body = "タスクアプリからのテスト通知";
         content.sound = UNNotificationSound.default()
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let request = UNNotificationRequest.init(identifier: "test", content: content, trigger: trigger)
         let center = UNUserNotificationCenter.current()
         center.add(request)
-        center.delegate = self
+        center.delegate = self*/
         
         return true
     }

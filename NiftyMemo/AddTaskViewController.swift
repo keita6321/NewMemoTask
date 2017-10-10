@@ -15,6 +15,8 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet var textDatePicker: UITextField!
+    @IBOutlet var saveButton: UIButton!
+    
     let datePicker = UIDatePicker()
     let center = UNUserNotificationCenter.current()
     
@@ -31,6 +33,8 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         //noticeTest.delegate = self
         //showDatePicker()
+        saveButton.frame.size.height = saveButton.frame.width // ボタンを正方形にする
+        saveButton.layer.cornerRadius = saveButton.frame.width / 2 // 角丸のサイズ（丸ボタン）
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -96,11 +100,11 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
         var now = Date()
         var count = calendar.dateComponents([.second], from: now, to: datePicker2.date).second
         formatter.dateFormat = "YYYY/MM/dd"
-        pickerLabel1.text = formatter.string(from: datePicker2.date)
+        //pickerLabel1.text = formatter.string(from: datePicker2.date)
         formatter2.dateFormat = "hh:mm a"
-        pickerLabel2.text = formatter2.string(from: datePicker2.date)
+        //pickerLabel2.text = formatter2.string(from: datePicker2.date)
         
-        alertCountLabel.text = String(describing: count!)
+        //alertCountLabel.text = String(describing: count!)
     }
     
     
@@ -127,8 +131,8 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
         let calendar = Calendar.current
         let now = Date()
         if(datePicker2.date>now){
-            content.title = "スケジュール";
-            content.body = "さっさとやろう";
+            content.title = "期限の確認";
+            content.body = object?.object(forKey: "text") as! String
             content.sound = UNNotificationSound.default()
             var count = calendar.dateComponents([.second], from: now, to: datePicker2.date).second
             let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: TimeInterval(count as! Int), repeats: false)

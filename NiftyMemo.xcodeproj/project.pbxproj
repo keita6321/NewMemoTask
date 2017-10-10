@@ -10,6 +10,10 @@
 		3BF7ECC65DD38620DCB8AB9F /* Pods_NiftyMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA53C49850352250EE7DCE74 /* Pods_NiftyMemo.framework */; };
 		AB0131051F7CE8B600DF21CB /* LeftMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0131041F7CE8B600DF21CB /* LeftMemoViewController.swift */; };
 		AB0131071F7CE93E00DF21CB /* SlideMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0131061F7CE93E00DF21CB /* SlideMemoViewController.swift */; };
+		AB2E2EFE1F8BD6DF00C4FA63 /* Hannari.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB2E2EFD1F8BD69A00C4FA63 /* Hannari.otf */; };
+		AB2E2EFF1F8BD6DF00C4FA63 /* ラノベPOP.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB2E2EFB1F8BD67D00C4FA63 /* ラノベPOP.otf */; };
+		AB2E2F001F8BD6DF00C4FA63 /* Harenosora.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB2E2EFC1F8BD68C00C4FA63 /* Harenosora.otf */; };
+		AB2E2F061F8BE96300C4FA63 /* 825215.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB2E2F051F8BE96300C4FA63 /* 825215.jpg */; };
 		AB2EDCA51F4D4FF2000C34C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */; };
 		AB2EDCAA1F4D4FF2000C34C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */; };
 		AB2EDCAC1F4D4FF2000C34C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2EDCAB1F4D4FF2000C34C5 /* Assets.xcassets */; };
@@ -42,6 +46,10 @@
 		4723C2D3D690F2E5866A557C /* Pods-NiftyMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiftyMemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiftyMemo/Pods-NiftyMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AB0131041F7CE8B600DF21CB /* LeftMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMemoViewController.swift; sourceTree = "<group>"; };
 		AB0131061F7CE93E00DF21CB /* SlideMemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMemoViewController.swift; sourceTree = "<group>"; };
+		AB2E2EFB1F8BD67D00C4FA63 /* ラノベPOP.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ラノベPOP.otf"; sourceTree = "<group>"; };
+		AB2E2EFC1F8BD68C00C4FA63 /* Harenosora.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Harenosora.otf; sourceTree = "<group>"; };
+		AB2E2EFD1F8BD69A00C4FA63 /* Hannari.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hannari.otf; sourceTree = "<group>"; };
+		AB2E2F051F8BE96300C4FA63 /* 825215.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 825215.jpg; sourceTree = "<group>"; };
 		AB2EDCA11F4D4FF2000C34C5 /* NiftyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiftyMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2EDCA91F4D4FF2000C34C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +124,9 @@
 			children = (
 				AB3151851F6673020055924F /* picture */,
 				AB2EDCA41F4D4FF2000C34C5 /* AppDelegate.swift */,
+				AB2E2EFD1F8BD69A00C4FA63 /* Hannari.otf */,
+				AB2E2EFB1F8BD67D00C4FA63 /* ラノベPOP.otf */,
+				AB2E2EFC1F8BD68C00C4FA63 /* Harenosora.otf */,
 				AB2EDCA81F4D4FF2000C34C5 /* Main.storyboard */,
 				AB2EDCB61F4D5910000C34C5 /* TaskViewController.swift */,
 				AB2EDCB81F4D5922000C34C5 /* AddTaskViewController.swift */,
@@ -142,6 +153,7 @@
 		AB3151851F6673020055924F /* picture */ = {
 			isa = PBXGroup;
 			children = (
+				AB2E2F051F8BE96300C4FA63 /* 825215.jpg */,
 				AB8872D61F823AE200755449 /* save-md.png */,
 				AB8872D41F823A8100755449 /* update-th.png */,
 				AB8872E21F82434400755449 /* january-2011-calendar-md (1).png */,
@@ -224,6 +236,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2E2EFE1F8BD6DF00C4FA63 /* Hannari.otf in Resources */,
+				AB2E2EFF1F8BD6DF00C4FA63 /* ラノベPOP.otf in Resources */,
+				AB2E2F001F8BD6DF00C4FA63 /* Harenosora.otf in Resources */,
 				AB2EDCAF1F4D4FF2000C34C5 /* LaunchScreen.storyboard in Resources */,
 				AB31519D1F67B3810055924F /* SampleTableViewCell.xib in Resources */,
 				AB8872DE1F82402C00755449 /* memo.png in Resources */,
@@ -237,6 +252,7 @@
 				ABEA5A001F84C4D700188F7A /* TaskTableViewCell.xib in Resources */,
 				AB3151841F6672F40055924F /* gplaypattern_@2X.png in Resources */,
 				AB3151A11F67B4D70055924F /* dora.png in Resources */,
+				AB2E2F061F8BE96300C4FA63 /* 825215.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

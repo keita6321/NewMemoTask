@@ -22,6 +22,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         // カスタムセルの登録
         let nib = UINib(nibName: "SampleTableViewCell", bundle: Bundle.main)
         memoTableView.register(nib, forCellReuseIdentifier: "SampleCell")
+        
         //print("タブバーの高さ")
         //print(tabBarController?.tabBar.frame.height)
         //print("なびばーの高さ")
@@ -46,6 +47,9 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SampleCell")!
         cell.textLabel?.text = memoArray[indexPath.row].object(forKey: "text") as! String
+        
+        cell.textLabel?.font = UIFont(name: "HarenosoraMincho", size: 17)
+        
         return cell
     }
 
