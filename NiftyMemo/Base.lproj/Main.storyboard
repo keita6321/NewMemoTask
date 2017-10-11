@@ -134,7 +134,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6tA-y0-y2t"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="p14-Ls-ps6">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -156,7 +156,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oxq-Pj-GaF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="G3H-Bm-ccu">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rp2-Fp-C9c">
@@ -273,7 +273,7 @@
                     <tabBarItem key="tabBarItem" title="TASK" image="task.png" id="qAd-mW-ZF3"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UCJ-Fv-if0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -548,7 +548,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVH-P2-lyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2268" y="-594.15292353823088"/>
+            <point key="canvasLocation" x="2210" y="-394"/>
         </scene>
     </scenes>
     <resources>

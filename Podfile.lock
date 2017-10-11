@@ -1,0 +1,27 @@
+PODS:
+  - NCMB (2.3.7)
+  - SlideMenuControllerSwift (3.0.2)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - NCMB (from `https://github.com/NIFTYCloud-mbaas/ncmb_ios.git`)
+  - SlideMenuControllerSwift
+  - SVProgressHUD
+
+EXTERNAL SOURCES:
+  NCMB:
+    :git: https://github.com/NIFTYCloud-mbaas/ncmb_ios.git
+
+CHECKOUT OPTIONS:
+  NCMB:
+    :commit: 75a1b1b1b7c656dbb5da59b0ac10bd9d4754c226
+    :git: https://github.com/NIFTYCloud-mbaas/ncmb_ios.git
+
+SPEC CHECKSUMS:
+  NCMB: 705b707898a144664e033321d679859f18533803
+  SlideMenuControllerSwift: 16001e1fd9963fd089fa6c91dbe18d4c148f0ce9
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: b30e02c177b846bcec11567a05a30c337feef978
+
+COCOAPODS: 1.2.1
