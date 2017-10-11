@@ -9,6 +9,7 @@
 import UIKit
 import NCMB
 import SVProgressHUD
+import UserNotifications
 
 class DetailTaskViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class DetailTaskViewController: UIViewController {
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var doneButton: UIButton!
+    let center = UNUserNotificationCenter.current()
     //var limit :String = ""
 
     @IBOutlet var memoTextView: UITextView!
@@ -76,6 +78,25 @@ class DetailTaskViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @IBAction func pickerValueChanged(_ sender: Any) {
+        let calendar = Calendar.current
+        let formatter = DateFormatter()
+        let formatter2 = DateFormatter()
+        var now = Date()
+        var count = calendar.dateComponents([.second], from: now, to: datePicker.date).second
+        formatter.dateFormat = "YYYY/MM/dd"
+        //pickerLabel1.text = formatter.string(from: datePicker2.date)
+        formatter2.dateFormat = "hh:mm a"
+        //pickerLabel2.text = formatter2.string(from: datePicker2.date)
+        
+        //alertCountLabel.text = String(describing: count!)
+        let formatter3 = DateFormatter()
+        formatter3.dateFormat = "YYYY/MM/dd hh:mm a"
+        print("start\(formatter3.string(from: now))")
+        print("end\(formatter3.string(from: datePicker.date))")
+        print(String(describing: count!))
+    }
+    
     func format(date:Date)->String{
         
         let dateformatter = DateFormatter()
@@ -98,10 +119,25 @@ class DetailTaskViewController: UIViewController {
                 SVProgressHUD.showError(withStatus: error?.localizedDescription)
             }
             else{
+                //self.postNotification()
                 self.navigationController?.popViewController(animated: true)
+            }
+            let content = UNMutableNotificationContent()
+            let calendar = Calendar.current
+            let now = Date()
+            if(self.datePicker.date>now){
+                content.title = "タスク期限の通知";
+                content.body = self.memoTextView.text
+                content.sound = UNNotificationSound.default()
+                var count = calendar.dateComponents([.second], from: now, to: self.datePicker.date).second
+                let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: TimeInterval(count as! Int), repeats: false)
+                let request = UNNotificationRequest.init(identifier: "Alert", content: content, trigger: trigger)
+                self.center.add(request)
+                print("アラートをセットしました")
             }
         }
     }
+    
     @IBAction func done(){
         selectedMemo.setObject(true, forKey: "done")
         selectedMemo.saveInBackground { (error) in
@@ -113,5 +149,9 @@ class DetailTaskViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             }
         }
+    }
+    
+    func postNotification() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateTask"), object: nil, userInfo: ["updateTaskFlag": true])
     }
 }

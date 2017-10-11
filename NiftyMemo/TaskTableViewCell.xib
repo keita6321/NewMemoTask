@@ -25,10 +25,9 @@
                         <color key="textColor" red="0.32941176470588235" green="0.29019607843137252" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-H3-uCh">
-                        <rect key="frame" x="285" y="8" width="80" height="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-H3-uCh">
+                        <rect key="frame" x="336.5" y="8" width="28.5" height="10"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="F2J-A6-01E"/>
                             <constraint firstAttribute="height" constant="10" id="Tjh-yd-t5P"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>

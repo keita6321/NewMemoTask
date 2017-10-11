@@ -65,6 +65,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="X8S-lz-3RK" secondAttribute="trailing" id="6ui-0h-i6j"/>
                                     <constraint firstItem="Ot9-s0-gyr" firstAttribute="height" secondItem="A7n-k7-Xi8" secondAttribute="height" multiplier="1:3" id="8Y7-FX-zHO"/>
@@ -133,7 +134,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6tA-y0-y2t"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="p14-Ls-ps6">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -155,7 +156,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oxq-Pj-GaF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="G3H-Bm-ccu">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rp2-Fp-C9c">
@@ -175,7 +176,7 @@
                                     <action selector="save" destination="PLI-cg-ILC" eventType="touchUpInside" id="dAC-Bo-kC2"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="qcS-k1-Y73">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qcS-k1-Y73">
                                 <rect key="frame" x="0.0" y="266" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="527497015.37823403">
@@ -229,13 +230,16 @@
                                     <action selector="update" destination="hhF-ih-Mst" eventType="touchUpInside" id="JWW-LE-lsW"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-VU-lOL">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-VU-lOL">
                                 <rect key="frame" x="0.0" y="266" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="528701436.37228">
                                     <!--2017-10-03 05:30:36 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ja"/>
+                                <connections>
+                                    <action selector="pickerValueChanged:" destination="hhF-ih-Mst" eventType="valueChanged" id="eAb-nY-ziK"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAS-tm-r0I">
                                 <rect key="frame" x="234" y="460" width="75" height="24"/>
@@ -269,12 +273,16 @@
                     <tabBarItem key="tabBarItem" title="TASK" image="task.png" id="qAd-mW-ZF3"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UCJ-Fv-if0">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UCJ-Fv-if0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="504-E1-YTv">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Xo0-MI-nLF" kind="relationship" relationship="rootViewController" id="b8z-nZ-8DK"/>
                     </connections>
@@ -283,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="-1639" y="-338"/>
         </scene>
-        <!--Memo View Controller-->
+        <!--memo-->
         <scene sceneID="nq0-lv-40m">
             <objects>
                 <viewController storyboardIdentifier="Memo" id="YWa-lj-bGd" customClass="MemoViewController" customModule="NiftyMemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -292,7 +300,7 @@
                         <viewControllerLayoutGuide type="bottom" id="U8o-Uu-xYt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tKK-xK-Vvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s7g-NY-M9s">
@@ -303,6 +311,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.78823529411764703" green="0.83529411764705885" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="memo" id="fJy-CW-4vW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2wy-sQ-mSE">
+                            <connections>
+                                <segue destination="0XV-xR-APL" kind="show" id="GR0-07-Kqh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="memoTableView" destination="s7g-NY-M9s" id="B4n-rg-En8"/>
                         <segue destination="ajg-d2-pxO" kind="show" identifier="toDetail" id="P6T-Xr-6Pz"/>
@@ -339,13 +354,13 @@
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="WV4-WM-jVK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="WV4-WM-jVK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Gdo-d8-BWS" kind="relationship" relationship="rootViewController" id="U6u-mp-LHl"/>
+                        <segue destination="YWa-lj-bGd" kind="relationship" relationship="rootViewController" id="aME-JF-OJL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mJ-jm-Ywd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRS-IK-sx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="1317"/>
+            <point key="canvasLocation" x="60" y="627"/>
         </scene>
         <!--Slide Memo View Controller-->
         <scene sceneID="U2k-PP-4sO">
@@ -379,18 +394,15 @@
                         <viewControllerLayoutGuide type="bottom" id="073-OA-b8a"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="v5f-NC-Ds1">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="XOP-b8-rMj"/>
-                    <connections>
-                        <segue destination="0XV-xR-APL" kind="show" identifier="toAddMemo" id="a1J-fI-yoc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Uo-x0-H4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-911" y="1015"/>
+            <point key="canvasLocation" x="-630" y="627"/>
         </scene>
         <!--New-->
         <scene sceneID="DuZ-1M-sz2">
@@ -471,7 +483,7 @@
                         <viewControllerLayoutGuide type="bottom" id="43p-Yo-8JP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="74I-48-ZhW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BhI-g0-QDp">
@@ -510,14 +522,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2As-Wo-BRE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZkG-um-PaP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZkG-um-PaP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ajg-d2-pxO" kind="relationship" relationship="rootViewController" id="al1-JV-iyr"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBP-GH-0yp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -528,7 +537,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H9T-4Z-kpU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yd8-yY-EHk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yd8-yY-EHk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -548,6 +557,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hj8-t9-YKV"/>
-        <segue reference="P6T-Xr-6Pz"/>
     </inferredMetricsTieBreakers>
 </document>

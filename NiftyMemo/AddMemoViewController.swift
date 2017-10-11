@@ -32,6 +32,7 @@ class AddMemoViewController: UIViewController {
     }
     
     @IBAction func save(){
+        SVProgressHUD.show(withStatus: "保存中...")
         let object = NCMBObject(className: "Memo")
         object?.setObject(memoTextView.text, forKey: "text")
         
@@ -41,8 +42,14 @@ class AddMemoViewController: UIViewController {
             }
             else{
                 print("メモの追加が完了")
+                SVProgressHUD.dismiss()
+                self.navigationController?.popViewController(animated: true)
+                //self.postNotification()
             }
         })
-        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func postNotification() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addMemo"), object: nil, userInfo: ["addMemoFlag": true])
     }
 }

@@ -46,7 +46,14 @@ class DetailMemoViewController: UIViewController {
             }
             else{
                 print("update memo")
+                self.postNotification()
                 self.navigationController?.popViewController(animated: true)
             }
         }
-    }}
+    }
+
+    func postNotification() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateMemo"), object: nil, userInfo: ["updateMemoFlag": true])
+    }
+    
+}

@@ -11,7 +11,7 @@ import NCMB
 import SVProgressHUD
 
 class MemoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet var memoTableView: UITableView!
     var memoArray = [NCMBObject]()
     
@@ -29,14 +29,19 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         //print((navigationController?.navigationBar.frame.height)!)
         memoTableView.tableFooterView = UIView()
         loadMemo()
+        //通知を受け取る設定
+        NotificationCenter.default.addObserver(self, selector: #selector(self.checkAddMemoFlag), name: NSNotification.Name(rawValue: "addMemo"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.checkUpdateMemoFlag), name: NSNotification.Name(rawValue: "updateMemo"), object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
+        //memoTableView.reloadData()
         loadMemo()
+    //memoTableView.reloadData()
     }
     
     //メモの個数を返す
@@ -52,7 +57,7 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-
+    
     //選択したセルを認識
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toDetail", sender: nil)
@@ -102,9 +107,9 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         print(memoArray.count)
     }
-
     
-
+    
+    
     func loadMemo(){
         let query = NCMBQuery(className: "Memo")
         query?.findObjectsInBackground({ (result, error) in
@@ -117,5 +122,20 @@ class MemoViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         })
     }
-
+    
+    func checkAddMemoFlag(notification: Notification){
+        let userinfo = notification.userInfo
+        if(userinfo?["addMemoFlag"] as! Bool){
+            print("テスト")
+            loadMemo()
+        }
+    }
+    func checkUpdateMemoFlag(notification: Notification){
+        let userinfo = notification.userInfo
+        if(userinfo?["updateMemoFlag"] as! Bool){
+            print("テストupdate")
+            loadMemo()
+        }
+    }
+    
 }

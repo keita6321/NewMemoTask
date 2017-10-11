@@ -37,9 +37,10 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
         loadAllMemo2()
         self.slideMenuController()?.delegate = self
         
-        //requestAuth()
-        
+         //通知を受け取る設定
         NotificationCenter.default.addObserver(self, selector: #selector(self.didCloseMenu), name: NSNotification.Name(rawValue: "taskType"), object: nil)
+        /*NotificationCenter.default.addObserver(self, selector: #selector(self.checkAddTaskFlag), name: NSNotification.Name(rawValue: "addTask"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.checkUpdateTaskFlag), name: NSNotification.Name(rawValue: "updateTask"), object: nil)*/
     }
     override func viewWillAppear(_ animated: Bool) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -59,9 +60,6 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
         //all=0, expired=1, today=2
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         print("slectedType \(appDelegate.selectedType)")
-        
-        
-        
         if(appDelegate.selectedType == 0){
             loadAllMemo2()
         }
@@ -89,7 +87,7 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskTableViewCell
         //cell.textLabel?.text = memoArray[indexPath.row].object(forKey: "text") as! String
         let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY/MM/dd"
+        formatter.dateFormat = "YYYY/MM/dd HH:mm"
         
         cell.mainLabel.text = memoArray[indexPath.row].object(forKey: "text") as! String
         cell.mainLabel.font = UIFont(name: "HarenosoraMincho", size: 17)
@@ -540,9 +538,9 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
             case 0:
                 loadAllMemo2()
             case 1:
-                loadTodayMemo2()
-            case 2:
                 loadExpiredMemo2()
+            case 2:
+                loadTodayMemo2()
             default:
                 break
             }
@@ -550,7 +548,34 @@ class TaskViewController: UIViewController,UITableViewDataSource, UITableViewDel
             print("userInfoがnilです")
         }
     }
-    
+    func checkAddTaskFlag(notification: Notification){
+        let userinfo = notification.userInfo
+        if(userinfo?["addTaskFlag"] as! Bool){
+            print("テスト")
+            if let userInfo = notification.userInfo {
+                switch userInfo["selectedType"] as! Int {
+                case 0:
+                    loadAllMemo2()
+                case 1:
+                    loadExpiredMemo2()
+                case 2:
+                    loadTodayMemo2()
+                default:
+                    break
+                }
+            } else {
+                print("userInfoがnilです")
+            }
+            
+        }
+    }
+    func checkUpdateTaskFlag(notification: Notification){
+        let userinfo = notification.userInfo
+        if(userinfo?["updateTaskFlag"] as! Bool){
+            print("テストupdate")
+            loadAllMemo2()
+        }
+    }
     
 }
 
